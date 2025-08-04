@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(222, 84%, 5%);
+  --foreground: hsl(210, 40%, 98%);
+  --muted: hsl(217, 33%, 17%);
+  --muted-foreground: hsl(215, 20.2%, 65.1%);
+  --popover: hsl(222, 84%, 5%);
+  --popover-foreground: hsl(210, 40%, 98%);
+  --card: hsl(220, 33%, 18%);
+  --card-foreground: hsl(210, 40%, 98%);
+  --border: hsl(217, 33%, 17%);
+  --input: hsl(217, 33%, 17%);
+  --primary: hsl(245, 83%, 68%);
+  --primary-foreground: hsl(210, 40%, 98%);
+  --secondary: hsl(217, 33%, 17%);
+  --secondary-foreground: hsl(210, 40%, 98%);
+  --accent: hsl(217, 33%, 17%);
+  --accent-foreground: hsl(210, 40%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(210, 40%, 98%);
+  --ring: hsl(212, 72%, 59%);
+  --radius: 0.5rem;
+  
+  /* Custom portfolio colors */
+  --dark-base: hsl(222, 84%, 5%);
+  --dark-card: hsl(220, 33%, 18%);
+  --text-primary: hsl(210, 40%, 98%);
+  --accent-indigo: hsl(245, 83%, 68%);
+  --accent-teal: hsl(174, 72%, 56%);
+}
+
+.dark {
+  --background: hsl(222, 84%, 5%);
+  --foreground: hsl(210, 40%, 98%);
+  --muted: hsl(217, 33%, 17%);
+  --muted-foreground: hsl(215, 20.2%, 65.1%);
+  --popover: hsl(222, 84%, 5%);
+  --popover-foreground: hsl(210, 40%, 98%);
+  --card: hsl(220, 33%, 18%);
+  --card-foreground: hsl(210, 40%, 98%);
+  --border: hsl(217, 33%, 17%);
+  --input: hsl(217, 33%, 17%);
+  --primary: hsl(245, 83%, 68%);
+  --primary-foreground: hsl(210, 40%, 98%);
+  --secondary: hsl(217, 33%, 17%);
+  --secondary-foreground: hsl(210, 40%, 98%);
+  --accent: hsl(217, 33%, 17%);
+  --accent-foreground: hsl(210, 40%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(210, 40%, 98%);
+  --ring: hsl(212, 72%, 59%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply antialiased bg-background text-foreground cursor-none overflow-x-hidden;
+    font-family: 'Inter', sans-serif;
+    background: var(--dark-base);
+    color: var(--text-primary);
+  }
+
+  .font-clash {
+    font-family: 'Clash Display', 'Inter', sans-serif;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  .glassmorphism {
+    @apply backdrop-blur-lg bg-opacity-30 border border-white/10;
+    background: rgba(30, 41, 59, 0.3);
+  }
+
+  .gradient-border {
+    background: linear-gradient(45deg, #6366f1, #14b8a6, #f59e0b, #ef4444);
+    padding: 1px;
+    border-radius: 12px;
+  }
+
+  .gradient-border-content {
+    @apply bg-background rounded-xl;
+  }
+
+  .typing-cursor::after {
+    content: '|';
+    @apply animate-pulse text-accent-indigo;
+  }
+}
+
+@layer utilities {
+  .text-accent-indigo {
+    color: var(--accent-indigo);
+  }
+
+  .text-accent-teal {
+    color: var(--accent-teal);
+  }
+
+  .bg-dark-base {
+    background-color: var(--dark-base);
+  }
+
+  .bg-dark-card {
+    background-color: var(--dark-card);
+  }
+
+  .border-accent-indigo {
+    border-color: var(--accent-indigo);
+  }
+
+  .bg-accent-indigo {
+    background-color: var(--accent-indigo);
+  }
+
+  .hover\:bg-accent-indigo:hover {
+    background-color: var(--accent-indigo);
+  }
+
+  .hover\:text-accent-indigo:hover {
+    color: var(--accent-indigo);
+  }
+
+  .hover\:text-accent-teal:hover {
+    color: var(--accent-teal);
+  }
+}
+
+/* Custom animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes glow {
+  from { box-shadow: 0 0 20px var(--accent-indigo); }
+  to { box-shadow: 0 0 30px var(--accent-indigo), 0 0 40px var(--accent-indigo); }
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dark-base);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-indigo);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-teal);
+}
