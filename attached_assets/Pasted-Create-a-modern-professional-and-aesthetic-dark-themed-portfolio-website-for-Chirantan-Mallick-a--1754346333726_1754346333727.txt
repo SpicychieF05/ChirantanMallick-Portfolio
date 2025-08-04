@@ -1,0 +1,84 @@
+Create a modern, professional, and aesthetic dark-themed portfolio website for Chirantan Mallick, a final-year BCA student at Seacom Skills University. He is a Front-end Developer and aspiring AI Engineer with internships at IBM SkillsBuild and Microsoft-SAP (TechSaksham), and is the founder of SemesterHub, an academic note-sharing platform.
+
+🔹 GitHub: github.com/spicychief05
+🔹 Email: mallickchirantan@gmail.com
+🔹 Phone: +918327438929
+🔹 Location: Bolpur, Birbhum, West Bengal, India
+
+The design should follow the style of brittanychiang.com, but with 3D drizzle/glow effects and nebula-like animations. Prioritize clean UI, strong typography, and reactive transitions.
+
+🔧 Development Guidelines:
+Tech Stack: React.js, Tailwind CSS, Framer Motion, Vanta.js (or Three.js), Lucide Icons
+
+Fonts: Clash Display for headings, Inter for body text
+
+Animations: Framer Motion for fade/slide/scroll reveal, Vanta.js net or halo for background
+
+🧩 Sections & Features:
+Hero Section
+
+Name with typing animation: “Hi, I’m Chirantan Mallick”
+
+Subtitle: “Front-end Developer | AI Engineer | BCA Student”
+
+Short bio highlighting AI/ML work and IBM internship
+
+CTA buttons: “View Projects” and “Contact Me”
+
+About Me
+
+Story as a BCA student, AI enthusiast, IBM intern
+
+Goals in AI and full-stack dev
+
+Mention Seacom Skills University and Ideathon 2025 leadership
+
+Skills/Stack
+
+C, C++, Python, JavaScript, TypeScript
+
+React, HTML/CSS, Tailwind, Firebase, Supabase, MySQL
+
+Tools: VS Code, Git, Streamlit, Canva
+
+Projects (Cards with animation & hover glow)
+
+SalaryScope (ML salary predictor) – 96% R² accuracy
+
+Semester Hub – Firebase + React-based academic tool
+
+AI Resume Screener – Streamlit, NLP, PDF parsing
+
+Experience (Timeline style)
+
+IBM, Microsoft-SAP internships (2025)
+
+Certifications: Python (Udemy), AWS, Deloitte, IBM AI
+
+Contact
+
+Email, phone, GitHub, and downloadable resume
+
+Glassmorphism contact form (optional)
+
+🎨 Styling & Colors:
+css
+Copy
+Edit
+Dark Base: #0f172a;
+Card: #1e293b;
+Text: #f8fafc;
+Accent: #6366f1 (Indigo), #14b8a6 (Teal);
+Glow Gradient: purple → pink → cyan → blue;
+🌟 Effects:
+Interactive 3D background (Vanta.js)
+
+Glassmorphism cards
+
+Glow cursor with drizzle trails
+
+Scroll-based section animations (GSAP or Framer Motion)
+
+Mobile-responsive design
+
+🎯 Goal: Build a polished, animation-rich, production-ready React portfolio showcasing Chirantan's AI, front-end, and academic achievements to attract internship or junior dev roles.
