@@ -1,28 +1,58 @@
-# Chirantan Mallick Portfolio
+# Chirantan Mallick - Portfolio
 
-A modern, professional dark-themed portfolio website showcasing AI/ML work and web development skills with 3D animations and glassmorphism effects.
+A modern, responsive portfolio website showcasing AI/ML projects and front-end development expertise. Built with React, TypeScript, and optimized for Vercel deployment.
+
+## ✨ Features
+
+- **Interactive 3D Background** using Vanta.js
+- **Responsive Design** with Tailwind CSS and glassmorphism effects
+- **Performance Optimized** with code splitting and lazy loading
+- **SEO Enhanced** with Open Graph and Twitter Cards
+- **Contact Form** with API integration
+- **Certificate Gallery** with modal previews
+
+## 🚀 Tech Stack
+
+- React 18 + TypeScript + Vite
+- Tailwind CSS + Framer Motion
+- Express.js API routes
+- Vercel deployment ready
+
+## 📱 Portfolio Sections
+
+- Hero with animated 3D background
+- About with enhanced profile image
+- Skills and technologies showcase
+- Featured projects gallery
+- Professional experience timeline
+- Certifications and achievements
+- Working contact form
 
 ## 🚀 Quick Start
 
 ### Prerequisites
-- Node.js 18+ 
+
+- Node.js 18+
 - npm or yarn
 - VS Code (recommended)
 
 ### Development Setup
 
 1. **Clone the repository**
+
    ```bash
    git clone <your-repo-url>
    cd portfolio
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
 
 3. **Start development server**
+
    ```bash
    npm run dev
    ```
@@ -34,7 +64,9 @@ A modern, professional dark-themed portfolio website showcasing AI/ML work and w
 ## 🛠️ VS Code Setup
 
 ### Recommended Extensions
+
 The project includes `.vscode/extensions.json` with recommended extensions:
+
 - **Prettier** - Code formatting
 - **Tailwind CSS IntelliSense** - Tailwind autocomplete
 - **TypeScript** - Enhanced TypeScript support
@@ -43,6 +75,7 @@ The project includes `.vscode/extensions.json` with recommended extensions:
 - **ESLint** - Code linting
 
 ### Auto-formatting
+
 - Code auto-formats on save
 - Tailwind classes are automatically sorted
 - ESLint auto-fixes on save
@@ -72,6 +105,7 @@ The project includes `.vscode/extensions.json` with recommended extensions:
 ## 🎨 Tech Stack
 
 ### Frontend
+
 - **React 18** with TypeScript
 - **Tailwind CSS** for styling
 - **Framer Motion** for animations
@@ -81,12 +115,14 @@ The project includes `.vscode/extensions.json` with recommended extensions:
 - **Vanta.js** for 3D backgrounds
 
 ### Backend
+
 - **Express.js** with TypeScript
 - **Drizzle ORM** for database operations
 - **Zod** for validation
 - **PostgreSQL** (production ready)
 
 ### Development Tools
+
 - **Vite** for fast development
 - **ESLint** for code linting
 - **Prettier** for code formatting
@@ -138,6 +174,7 @@ npm run db:studio      # Open Drizzle Studio
 ## 🚀 Deployment
 
 The project is optimized for deployment on platforms like:
+
 - **Vercel** (recommended for frontend)
 - **Railway** (for full-stack)
 - **Netlify** (frontend only)
@@ -152,12 +189,14 @@ The project is optimized for deployment on platforms like:
 ## 🎨 Design System
 
 ### Colors
+
 - **Primary**: Indigo tones
 - **Secondary**: Teal accents
 - **Background**: Dark with glassmorphism
 - **Text**: Slate variations
 
 ### Typography
+
 - **Headings**: Clash Display
 - **Body**: Inter
 - **Code**: JetBrains Mono
