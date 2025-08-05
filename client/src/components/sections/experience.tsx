@@ -1,18 +1,15 @@
 import { motion } from "framer-motion";
 import { Award, ChevronRight, GraduationCap, Users, X } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function Experience() {
   const [selectedCert, setSelectedCert] = useState<number | null>(null);
-  const [imageStatuses, setImageStatuses] = useState<
-    Record<number, "loading" | "loaded" | "error">
-  >({});
 
   const experiences = [
     {
       title: "AI/ML Intern",
       company: "IBM SkillsBuild",
-      logo: "/assets/images/experience/companies/ibm-logo.png",
+      logo: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' fill='%23134e96' rx='8'/%3E%3Ctext x='50%25' y='30%25' dominant-baseline='central' text-anchor='middle' font-family='Arial, sans-serif' font-size='14' font-weight='bold' fill='white'%3EIBM%3C/text%3E%3Ctext x='50%25' y='70%25' dominant-baseline='central' text-anchor='middle' font-family='Arial, sans-serif' font-size='8' fill='white'%3ESkillsBuild%3C/text%3E%3C/svg%3E",
       period: "2025",
       description: [
         "Developed machine learning models for predictive analytics with focus on salary prediction algorithms",
@@ -24,7 +21,7 @@ export default function Experience() {
     {
       title: "Tech Intern",
       company: "Microsoft-SAP (TechSaksham)",
-      logo: "/assets/images/experience/companies/microsoft-sap-logo.png",
+      logo: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' fill='%23f25022' rx='8'/%3E%3Ctext x='50%25' y='30%25' dominant-baseline='central' text-anchor='middle' font-family='Arial, sans-serif' font-size='10' font-weight='bold' fill='white'%3EMSFT%3C/text%3E%3Ctext x='50%25' y='70%25' dominant-baseline='central' text-anchor='middle' font-family='Arial, sans-serif' font-size='8' fill='white'%3ESAP%3C/text%3E%3C/svg%3E",
       period: "2025",
       description: [
         "Worked on enterprise-level web applications using modern JavaScript frameworks and cloud technologies",
@@ -116,23 +113,6 @@ export default function Experience() {
     },
   ];
 
-  // Preload images
-  useEffect(() => {
-    certifications.forEach((cert, index) => {
-      setImageStatuses((prev) => ({ ...prev, [index]: "loading" }));
-      const img = new Image();
-      img.onload = () => {
-        console.log(`✅ Preloaded: ${cert.title}`);
-        setImageStatuses((prev) => ({ ...prev, [index]: "loaded" }));
-      };
-      img.onerror = () => {
-        console.error(`❌ Preload failed: ${cert.title}`, cert.image);
-        setImageStatuses((prev) => ({ ...prev, [index]: "error" }));
-      };
-      img.src = cert.image;
-    });
-  }, []);
-
   const techColors: Record<string, string> = {
     Python: "bg-accent-indigo/20 text-accent-indigo",
     "Machine Learning": "bg-accent-teal/20 text-accent-teal",
@@ -181,12 +161,6 @@ export default function Experience() {
                     src={exp.logo}
                     alt={`${exp.company} logo`}
                     className="h-12 w-12 rounded-lg bg-white/10 object-contain p-2"
-                    loading="lazy"
-                    onError={(e) => {
-                      console.error(`Failed to load company logo: ${exp.logo}`);
-                      e.currentTarget.src =
-                        "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' fill='%23334155' rx='8'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Arial, sans-serif' font-size='24' fill='%2394a3b8'%3E🏢%3C/text%3E%3C/svg%3E";
-                    }}
                   />
                   <h3 className="font-clash text-accent-indigo text-xl font-bold">
                     {exp.title}
@@ -246,50 +220,20 @@ export default function Experience() {
                     className="relative cursor-pointer"
                     onClick={() => setSelectedCert(index)}
                   >
-                    <div className="glassmorphism hover:shadow-accent-indigo/20 relative aspect-[4/3] overflow-hidden rounded-xl transition-all duration-300 hover:shadow-lg">
-                      {imageStatuses[index] === "loading" && (
-                        <div className="absolute inset-0 flex items-center justify-center bg-slate-800/50">
-                          <div className="border-accent-teal h-6 w-6 animate-spin rounded-full border-2 border-t-transparent"></div>
-                        </div>
-                      )}
-                      {imageStatuses[index] === "error" ? (
-                        <div className="flex h-full w-full items-center justify-center bg-slate-700 text-slate-400">
-                          <div className="text-center">
-                            <div className="mb-2 text-2xl">🏆</div>
-                            <div className="px-2 text-xs">{cert.title}</div>
-                          </div>
-                        </div>
-                      ) : (
-                        <img
-                          src={cert.image}
-                          alt={cert.title}
-                          className={`h-full w-full object-cover transition-opacity duration-300 ${
-                            imageStatuses[index] === "loaded"
-                              ? "opacity-100"
-                              : "opacity-0"
-                          }`}
-                          loading="lazy"
-                          onLoad={() => {
-                            console.log(
-                              `✅ Certificate image displayed: ${cert.title}`
-                            );
-                            setImageStatuses((prev) => ({
-                              ...prev,
-                              [index]: "loaded",
-                            }));
-                          }}
-                          onError={(e) => {
-                            console.error(
-                              `❌ Failed to display certificate image: ${cert.title}`,
-                              cert.image
-                            );
-                            setImageStatuses((prev) => ({
-                              ...prev,
-                              [index]: "error",
-                            }));
-                          }}
-                        />
-                      )}
+                    <div className="glassmorphism hover:shadow-accent-indigo/20 aspect-[4/3] overflow-hidden rounded-xl transition-all duration-300 hover:shadow-lg">
+                      <img
+                        src={cert.image}
+                        alt={cert.title}
+                        className="h-full w-full object-cover"
+                        onLoad={() => console.log(`✅ ${cert.title} loaded`)}
+                        onError={(e) => {
+                          console.error(`❌ ${cert.title} failed:`, cert.image);
+                          e.currentTarget.src =
+                            "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='150' viewBox='0 0 200 150'%3E%3Crect width='200' height='150' fill='%23334155' rx='8'/%3E%3Ctext x='50%25' y='40%25' dominant-baseline='central' text-anchor='middle' font-family='Arial, sans-serif' font-size='16' fill='%2394a3b8'%3E🏆%3C/text%3E%3Ctext x='50%25' y='70%25' dominant-baseline='central' text-anchor='middle' font-family='Arial, sans-serif' font-size='10' fill='%2364748b'%3E" +
+                            encodeURIComponent(cert.title) +
+                            "%3C/text%3E%3C/svg%3E";
+                        }}
+                      />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent">
                         <div className="absolute bottom-2 left-2 right-2">
                           <div className="mb-1 flex items-center space-x-2">
@@ -306,7 +250,7 @@ export default function Experience() {
               })}
             </div>
 
-            {/* Modal popup on tap/click */}
+            {/* Modal popup */}
             {selectedCert !== null && (
               <div
                 className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm"
@@ -330,13 +274,11 @@ export default function Experience() {
                     src={certifications[selectedCert].image}
                     alt={certifications[selectedCert].title}
                     className="h-full w-full object-cover"
-                    loading="eager"
                     onError={(e) => {
-                      console.error(
-                        `Failed to load modal certificate image: ${certifications[selectedCert].image}`
-                      );
                       e.currentTarget.src =
-                        "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23334155' rx='8'/%3E%3Ctext x='50%25' y='40%25' dominant-baseline='central' text-anchor='middle' font-family='Arial, sans-serif' font-size='24' fill='%2394a3b8'%3E🏆%3C/text%3E%3Ctext x='50%25' y='70%25' dominant-baseline='central' text-anchor='middle' font-family='Arial, sans-serif' font-size='14' fill='%2364748b'%3ECertificate%3C/text%3E%3C/svg%3E";
+                        "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23334155' rx='8'/%3E%3Ctext x='50%25' y='40%25' dominant-baseline='central' text-anchor='middle' font-family='Arial, sans-serif' font-size='24' fill='%2394a3b8'%3E🏆%3C/text%3E%3Ctext x='50%25' y='70%25' dominant-baseline='central' text-anchor='middle' font-family='Arial, sans-serif' font-size='14' fill='%2364748b'%3E" +
+                        encodeURIComponent(certifications[selectedCert].title) +
+                        "%3C/text%3E%3C/svg%3E";
                     }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent">

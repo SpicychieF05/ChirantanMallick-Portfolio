@@ -1,5 +1,3 @@
-import ImageTest from "@/components/ImageTest";
-import SimpleExperience from "@/components/SimpleExperience";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Home from "@/pages/home";
@@ -13,8 +11,6 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/my-side" component={MySide} />
-      <Route path="/test-images" component={ImageTest} />
-      <Route path="/simple-test" component={SimpleExperience} />
       <Route component={Home} />
     </Switch>
   );
