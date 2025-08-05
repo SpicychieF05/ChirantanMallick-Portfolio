@@ -28,12 +28,56 @@ export default function Experience() {
   ];
 
   const certifications = [
-    { title: "Python Programming - Udemy", icon: Award },
-    { title: "AWS Cloud Practitioner", icon: Award },
-    { title: "IBM AI Engineering", icon: Award },
-    { title: "Deloitte Technology Consulting", icon: Award },
-    { title: "Ideathon 2025 Team Leader", icon: Users },
-    { title: "Final Year BCA Student", icon: GraduationCap }
+    { 
+      title: "Python Programming - Udemy", 
+      icon: Award,
+      image: "https://images.unsplash.com/photo-1549692520-acc6669e2f0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=600"
+    },
+    { 
+      title: "AWS Cloud Practitioner", 
+      icon: Award,
+      image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=600"
+    },
+    { 
+      title: "IBM AI Engineering", 
+      icon: Award,
+      image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=600"
+    },
+    { 
+      title: "Deloitte Technology Consulting", 
+      icon: Award,
+      image: "https://images.unsplash.com/photo-1560472355-536de3962603?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=600"
+    },
+    { 
+      title: "Machine Learning Specialization", 
+      icon: Award,
+      image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=600"
+    },
+    { 
+      title: "React.js Development", 
+      icon: Award,
+      image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=600"
+    },
+    { 
+      title: "Data Science Fundamentals", 
+      icon: Award,
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=600"
+    },
+    { 
+      title: "JavaScript ES6+ Advanced", 
+      icon: Award,
+      image: "https://images.unsplash.com/photo-1627398242454-45a1465c2479?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=600"
+    },
+    { 
+      title: "Ideathon 2025 Team Leader", 
+      icon: Users,
+      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=600"
+    },
+    { 
+      title: "Final Year BCA Student", 
+      icon: GraduationCap,
+      image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=600"
+    }
   ];
 
   const techColors: Record<string, string> = {
@@ -111,19 +155,45 @@ export default function Experience() {
             className="glassmorphism p-8 rounded-xl"
           >
             <h3 className="font-clash font-bold text-xl text-accent-indigo mb-6">Certifications & Achievements</h3>
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
               {certifications.map((cert, index) => {
                 const IconComponent = cert.icon;
                 return (
                   <motion.div 
                     key={cert.title}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    whileHover={{ 
+                      scale: 1.8,
+                      zIndex: 50,
+                      transition: { duration: 0.2 }
+                    }}
                     transition={{ duration: 0.4, delay: 0.1 * index }}
-                    className="flex items-center space-x-3"
+                    className="group relative cursor-pointer"
                   >
-                    <IconComponent className="w-5 h-5 text-accent-teal" />
-                    <span>{cert.title}</span>
+                    <div className="glassmorphism rounded-xl overflow-hidden aspect-square transition-all duration-300 group-hover:shadow-2xl group-hover:shadow-accent-indigo/30">
+                      <img 
+                        src={cert.image} 
+                        alt={cert.title}
+                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div className="absolute bottom-2 left-2 right-2">
+                          <div className="flex items-center space-x-2 mb-1">
+                            <IconComponent className="w-4 h-4 text-accent-teal" />
+                          </div>
+                          <p className="text-white text-xs font-semibold leading-tight line-clamp-2">
+                            {cert.title}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Popup tooltip on hover */}
+                    <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-dark-card px-3 py-2 rounded-lg text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-10 border border-accent-indigo/20">
+                      {cert.title}
+                      <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-dark-card"></div>
+                    </div>
                   </motion.div>
                 );
               })}
