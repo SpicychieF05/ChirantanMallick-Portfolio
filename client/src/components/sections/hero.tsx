@@ -46,7 +46,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 2 }}
-            className="font-clash font-semibold text-2xl sm:text-4xl lg:text-5xl text-slate-400 mb-8"
+            className="font-clash font-semibold text-xl sm:text-2xl md:text-3xl lg:text-4xl text-slate-400 mb-8 whitespace-nowrap"
           >
             Front-end Developer | AI Engineer | BCA Student
           </motion.h2>
