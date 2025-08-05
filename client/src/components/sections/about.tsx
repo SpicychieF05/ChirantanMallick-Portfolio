@@ -114,7 +114,7 @@ export default function About() {
             <div className="relative">
               <div className="glassmorphism h-96 w-80 overflow-hidden rounded-2xl transition-transform duration-300 hover:scale-105">
                 <img
-                  src="/assets/images/profile/Chirantan-mallick-hero-image.jpg"
+                  src="https://res.cloudinary.com/dlxybta5a/image/upload/v1754429079/Chirantan-mallick-hero-image_sdw6ld.jpg"
                   alt="Chirantan Mallick"
                   className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
                   onError={(e) => {
