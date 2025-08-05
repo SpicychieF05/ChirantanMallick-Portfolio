@@ -187,11 +187,18 @@ export default function Contact() {
                   className="w-full px-4 py-3 rounded-lg bg-dark-card border border-slate-600 focus:border-accent-indigo focus:ring-1 focus:ring-accent-indigo transition-colors duration-300 resize-none"
                 />
               </div>
-              <Button type="submit" className="w-full gradient-border group">
-                <div className="bg-dark-base px-6 py-3 rounded-xl hover:bg-dark-card transition-all duration-300 font-semibold group-hover:scale-105">
-                  Send Message
+              <button 
+                type="submit" 
+                className="w-full relative overflow-hidden bg-gradient-to-r from-accent-indigo to-accent-teal p-0.5 rounded-xl group hover:shadow-lg hover:shadow-accent-indigo/25 transition-all duration-300"
+              >
+                <div className="bg-dark-base rounded-lg px-6 py-4 group-hover:bg-transparent transition-all duration-300">
+                  <span className="relative z-10 font-semibold text-white group-hover:text-white transition-colors duration-300 flex items-center justify-center space-x-2">
+                    <Mail className="w-5 h-5" />
+                    <span>Send Message</span>
+                  </span>
                 </div>
-              </Button>
+                <div className="absolute inset-0 bg-gradient-to-r from-accent-indigo to-accent-teal opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+              </button>
             </form>
           </motion.div>
         </div>
