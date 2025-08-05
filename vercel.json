@@ -57,10 +57,10 @@
   ],
   "functions": {
     "api/placeholder.js": {
-      "runtime": "nodejs18.x"
+      "runtime": "@vercel/node"
     },
     "api/contact.js": {
-      "runtime": "nodejs18.x"
+      "runtime": "@vercel/node"
     }
   }
 }
