@@ -48,6 +48,9 @@ export default function Navbar() {
               <button onClick={() => scrollToSection('experience')} className="hover:text-accent-indigo transition-colors duration-300">
                 Experience
               </button>
+              <a href="/my-side" className="hover:text-accent-indigo transition-colors duration-300">
+                My-Side
+              </a>
               <button onClick={() => scrollToSection('contact')} className="hover:text-accent-indigo transition-colors duration-300">
                 Contact
               </button>
@@ -83,6 +86,9 @@ export default function Navbar() {
                 <button onClick={() => scrollToSection('experience')} className="block w-full text-left hover:text-accent-indigo transition-colors duration-300">
                   Experience
                 </button>
+                <a href="/my-side" className="block w-full text-left hover:text-accent-indigo transition-colors duration-300">
+                  My-Side
+                </a>
                 <button onClick={() => scrollToSection('contact')} className="block w-full text-left hover:text-accent-indigo transition-colors duration-300">
                   Contact
                 </button>
