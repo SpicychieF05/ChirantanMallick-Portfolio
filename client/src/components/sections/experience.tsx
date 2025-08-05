@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { Award, ChevronRight, GraduationCap, Users, X } from "lucide-react";
 import { useState } from "react";
-import { OptimizedImage } from "../ui/optimized-image";
 
 export default function Experience() {
   const [selectedCert, setSelectedCert] = useState<number | null>(null);
@@ -158,12 +157,16 @@ export default function Experience() {
             >
               <div className="mb-4 flex flex-col md:flex-row md:items-center md:justify-between">
                 <div className="flex items-center gap-4">
-                  <OptimizedImage
+                  <img
                     src={exp.logo}
                     alt={`${exp.company} logo`}
                     className="h-12 w-12 rounded-lg bg-white/10 object-contain p-2"
-                    fallback="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' fill='%23334155' rx='8'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Arial, sans-serif' font-size='24' fill='%2394a3b8'%3E🏢%3C/text%3E%3C/svg%3E"
                     loading="lazy"
+                    onError={(e) => {
+                      console.error(`Failed to load company logo: ${exp.logo}`);
+                      e.currentTarget.src =
+                        "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' fill='%23334155' rx='8'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Arial, sans-serif' font-size='24' fill='%2394a3b8'%3E🏢%3C/text%3E%3C/svg%3E";
+                    }}
                   />
                   <h3 className="font-clash text-accent-indigo text-xl font-bold">
                     {exp.title}
@@ -224,12 +227,18 @@ export default function Experience() {
                     onClick={() => setSelectedCert(index)}
                   >
                     <div className="glassmorphism hover:shadow-accent-indigo/20 aspect-[4/3] overflow-hidden rounded-xl transition-all duration-300 hover:shadow-lg">
-                      <OptimizedImage
+                      <img
                         src={cert.image}
                         alt={cert.title}
                         className="h-full w-full object-cover"
-                        fallback="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='150' viewBox='0 0 200 150'%3E%3Crect width='200' height='150' fill='%23334155' rx='8'/%3E%3Ctext x='50%25' y='40%25' dominant-baseline='central' text-anchor='middle' font-family='Arial, sans-serif' font-size='16' fill='%2394a3b8'%3E🏆%3C/text%3E%3Ctext x='50%25' y='70%25' dominant-baseline='central' text-anchor='middle' font-family='Arial, sans-serif' font-size='10' fill='%2364748b'%3ECertificate%3C/text%3E%3C/svg%3E"
                         loading="lazy"
+                        onError={(e) => {
+                          console.error(
+                            `Failed to load certificate image: ${cert.image}`
+                          );
+                          e.currentTarget.src =
+                            "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='150' viewBox='0 0 200 150'%3E%3Crect width='200' height='150' fill='%23334155' rx='8'/%3E%3Ctext x='50%25' y='40%25' dominant-baseline='central' text-anchor='middle' font-family='Arial, sans-serif' font-size='16' fill='%2394a3b8'%3E🏆%3C/text%3E%3Ctext x='50%25' y='70%25' dominant-baseline='central' text-anchor='middle' font-family='Arial, sans-serif' font-size='10' fill='%2364748b'%3ECertificate%3C/text%3E%3C/svg%3E";
+                        }}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent">
                         <div className="absolute bottom-2 left-2 right-2">
@@ -267,11 +276,18 @@ export default function Experience() {
                   >
                     <X className="h-4 w-4" />
                   </button>
-                  <OptimizedImage
+                  <img
                     src={certifications[selectedCert].image}
                     alt={certifications[selectedCert].title}
                     className="h-full w-full object-cover"
                     loading="eager"
+                    onError={(e) => {
+                      console.error(
+                        `Failed to load modal certificate image: ${certifications[selectedCert].image}`
+                      );
+                      e.currentTarget.src =
+                        "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23334155' rx='8'/%3E%3Ctext x='50%25' y='40%25' dominant-baseline='central' text-anchor='middle' font-family='Arial, sans-serif' font-size='24' fill='%2394a3b8'%3E🏆%3C/text%3E%3Ctext x='50%25' y='70%25' dominant-baseline='central' text-anchor='middle' font-family='Arial, sans-serif' font-size='14' fill='%2364748b'%3ECertificate%3C/text%3E%3C/svg%3E";
+                    }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent">
                     <div className="absolute bottom-6 left-6 right-6">
