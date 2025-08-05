@@ -7,7 +7,8 @@ export default function Projects() {
       title: "SalaryScope",
       description:
         "An intelligent Machine Learning application that predicts software developer salaries with 96% R² accuracy. Built using advanced regression algorithms and trained on comprehensive industry data to provide accurate salary insights for different roles, experience levels, and locations.",
-      image: "/assets/images/projects/salaryscope/salaryscope-project.png",
+      image:
+        "https://res.cloudinary.com/dlxybta5a/image/upload/v1754429205/salaryscope-project_aivyxb.png",
       tech: ["Python", "Scikit-Learn", "Pandas", "Streamlit", "Data Analysis"],
       github: "#",
       live: "#",
@@ -17,7 +18,8 @@ export default function Projects() {
       title: "SemesterHub",
       description:
         "A comprehensive academic note-sharing platform built with React.js and Firebase, designed to foster collaboration among students. Features real-time document sharing, organized course materials, user authentication, and a clean, intuitive interface for seamless academic resource management.",
-      image: "/assets/images/projects/semesterhub/semesterhub-project.png",
+      image:
+        "https://res.cloudinary.com/dlxybta5a/image/upload/v1754429175/semesterhub-project_wrskff.png",
       tech: [
         "React.js",
         "Firebase",
@@ -34,7 +36,7 @@ export default function Projects() {
       description:
         "An intelligent resume screening application powered by Natural Language Processing and machine learning. Features PDF parsing, skill extraction, job matching algorithms, and automated candidate ranking to streamline the recruitment process for HR professionals.",
       image:
-        "/assets/images/projects/ai-resume-screener/ai-resume-screener-project.png",
+        "https://res.cloudinary.com/dlxybta5a/image/upload/v1754429147/ai-resume-screener-project_pnabv9.png",
       tech: [
         "Python",
         "NLP",
