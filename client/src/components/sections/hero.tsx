@@ -46,9 +46,9 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 2 }}
-            className="font-clash font-semibold text-xl sm:text-2xl md:text-3xl lg:text-4xl text-slate-400 mb-8 whitespace-nowrap"
+            className="font-clash font-semibold text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-slate-400 mb-8 text-center px-4 leading-relaxed"
           >
-            Front-end Developer | AI Engineer | BCA Student
+            <span className="inline-block">Front-end Developer | AI Engineer | BCA Student</span>
           </motion.h2>
           
           <motion.p 
