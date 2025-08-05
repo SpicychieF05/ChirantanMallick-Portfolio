@@ -137,6 +137,12 @@ dist/
 
 # Database
 *.db
+
+# Vercel
+.vercel
+
+# Local development
+.local/
 *.sqlite
 *.sqlite3
 
