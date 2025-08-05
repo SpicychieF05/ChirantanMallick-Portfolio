@@ -1,4 +1,3 @@
-import DirectImageTest from "@/components/DirectImageTest";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Home from "@/pages/home";
@@ -12,7 +11,6 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/my-side" component={MySide} />
-      <Route path="/debug" component={DirectImageTest} />
       <Route component={Home} />
     </Switch>
   );
