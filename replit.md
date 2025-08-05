@@ -57,7 +57,25 @@ Preferred communication style: Simple, everyday language.
 
 ### Development Tools
 - **Build System**: Vite with React plugin and runtime error overlay
-- **Code Quality**: TypeScript strict mode, ESLint configuration ready
+- **Code Quality**: TypeScript strict mode, ESLint with React plugins, Prettier with Tailwind plugin
 - **Database**: Drizzle Kit for migrations and schema management
 - **Deployment**: Node.js production server with static file serving
-- **Replit Integration**: Vite plugin for Replit-specific development features
+- **VS Code Integration**: Complete VS Code setup with extensions, tasks, debugging, and settings
+- **Local Development**: Optimized for local development with auto-formatting and linting
+
+## Local Development Setup
+
+### VS Code Configuration
+- **Extensions**: Prettier, Tailwind CSS IntelliSense, TypeScript, ESLint, Auto Rename Tag
+- **Auto-formatting**: Format on save with Prettier and Tailwind class sorting
+- **Debugging**: Full-stack debugging with breakpoints for both client and server
+- **Tasks**: Pre-configured tasks for building, linting, formatting, and type checking
+- **Settings**: Optimized for React/TypeScript development with Tailwind CSS
+
+### Development Commands
+- `npm run dev` - Start development server (client + server)
+- `npm run check` - TypeScript type checking
+- `npx eslint . --ext .ts,.tsx,.js,.jsx --fix` - Lint and auto-fix
+- `npx prettier --write "**/*.{ts,tsx,js,jsx,json,css,md}"` - Format code
+- `npm run build` - Production build
+- `npm run db:push` - Push database schema changes

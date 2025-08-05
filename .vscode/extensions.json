@@ -1,0 +1,15 @@
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "bradlc.vscode-tailwindcss",
+    "ms-vscode.vscode-typescript-next",
+    "formulahendry.auto-rename-tag",
+    "christian-kohler.path-intellisense",
+    "ms-vscode.vscode-json",
+    "unifiedjs.vscode-mdx",
+    "bradlc.vscode-tailwindcss",
+    "ms-vscode.vscode-eslint",
+    "eamodio.gitlens",
+    "ms-vscode.vscode-npm-scripts"
+  ]
+}
