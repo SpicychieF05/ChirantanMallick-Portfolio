@@ -1,7 +1,10 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { ChevronRight, Award, Users, GraduationCap } from "lucide-react";
+import { ChevronRight, Award, Users, GraduationCap, X } from "lucide-react";
 
 export default function Experience() {
+  const [selectedCert, setSelectedCert] = useState<number | null>(null);
+  
   const experiences = [
     {
       title: "AI/ML Intern",
@@ -164,15 +167,16 @@ export default function Experience() {
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.4, delay: 0.1 * index }}
-                    className="group relative cursor-pointer"
+                    className="relative cursor-pointer"
+                    onClick={() => setSelectedCert(index)}
                   >
-                    <div className="glassmorphism rounded-xl overflow-hidden aspect-square transition-all duration-300 group-hover:shadow-xl group-hover:shadow-accent-indigo/30 group-hover:scale-105">
+                    <div className="glassmorphism rounded-xl overflow-hidden aspect-square transition-all duration-300 hover:shadow-lg hover:shadow-accent-indigo/20">
                       <img 
                         src={cert.image} 
                         alt={cert.title}
-                        className="w-full h-full object-cover transition-transform duration-300"
+                        className="w-full h-full object-cover"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent">
                         <div className="absolute bottom-2 left-2 right-2">
                           <div className="flex items-center space-x-2 mb-1">
                             <IconComponent className="w-4 h-4 text-accent-teal" />
@@ -183,38 +187,53 @@ export default function Experience() {
                         </div>
                       </div>
                     </div>
-                    
-                    {/* Large popup in center on hover */}
-                    <div className="fixed inset-0 z-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                      <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
-                      <motion.div 
-                        initial={{ scale: 0.8, opacity: 0 }}
-                        whileHover={{ scale: 1, opacity: 1 }}
-                        transition={{ duration: 0.2 }}
-                        className="relative w-80 h-80 glassmorphism rounded-2xl overflow-hidden shadow-2xl shadow-accent-indigo/40 border border-accent-indigo/30"
-                      >
-                        <img 
-                          src={cert.image} 
-                          alt={cert.title}
-                          className="w-full h-full object-cover"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent">
-                          <div className="absolute bottom-6 left-6 right-6">
-                            <div className="flex items-center space-x-3 mb-3">
-                              <IconComponent className="w-6 h-6 text-accent-teal" />
-                              <span className="text-accent-teal font-mono text-sm">Certificate</span>
-                            </div>
-                            <h4 className="text-white text-xl font-clash font-bold leading-tight">
-                              {cert.title}
-                            </h4>
-                          </div>
-                        </div>
-                      </motion.div>
-                    </div>
                   </motion.div>
                 );
               })}
             </div>
+            
+            {/* Modal popup on tap/click */}
+            {selectedCert !== null && (
+              <div 
+                className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm"
+                onClick={() => setSelectedCert(null)}
+              >
+                <motion.div 
+                  initial={{ scale: 0.8, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  exit={{ scale: 0.8, opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                  className="relative w-80 h-80 glassmorphism rounded-2xl overflow-hidden shadow-2xl shadow-accent-indigo/40 border border-accent-indigo/30 m-4"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <button
+                    onClick={() => setSelectedCert(null)}
+                    className="absolute top-4 right-4 z-10 w-8 h-8 bg-black/50 rounded-full flex items-center justify-center text-white hover:bg-black/70 transition-colors duration-200"
+                  >
+                    <X className="w-4 h-4" />
+                  </button>
+                  <img 
+                    src={certifications[selectedCert].image} 
+                    alt={certifications[selectedCert].title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent">
+                    <div className="absolute bottom-6 left-6 right-6">
+                      <div className="flex items-center space-x-3 mb-3">
+                        {(() => {
+                          const IconComponent = certifications[selectedCert].icon;
+                          return <IconComponent className="w-6 h-6 text-accent-teal" />;
+                        })()}
+                        <span className="text-accent-teal font-mono text-sm">Certificate</span>
+                      </div>
+                      <h4 className="text-white text-xl font-clash font-bold leading-tight">
+                        {certifications[selectedCert].title}
+                      </h4>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+            )}
           </motion.div>
         </div>
       </div>
