@@ -33,15 +33,23 @@ export default function About() {
             className="space-y-6"
           >
             <p className="text-lg leading-relaxed text-slate-300">
-              Hello! I'm Chirantan, a passionate final-year BCA student at <span className="text-accent-teal">Seacom Skills University</span> with a deep fascination for technology and innovation. My journey began with curiosity about how websites work, which led me to explore front-end development and eventually discover the exciting world of artificial intelligence.
+              I'm <span className="text-accent-teal">Chirantan Mallick</span>, a final-year BCA student at <span className="text-accent-teal">Seacom Skills University</span>, driven by a deep curiosity that began with a simple question: <span className="text-accent-indigo">How do websites work?</span> That early fascination sparked a journey through the world of technology—one that now blends front-end development with the power of artificial intelligence.
             </p>
             
             <p className="text-lg leading-relaxed text-slate-300">
-              During my internships at <span className="text-accent-indigo">IBM SkillsBuild</span> and <span className="text-accent-teal">Microsoft-SAP (TechSaksham)</span>, I've gained hands-on experience in cutting-edge technologies and worked on impactful projects. I'm also the founder of <span className="text-accent-indigo">SemesterHub</span>, an academic note-sharing platform that helps students collaborate and learn together.
+              I started with web development, gradually expanding into AI and its integration with modern applications. Along the way, I gained practical experience through internships with <span className="text-accent-indigo">IBM SkillsBuild</span> and <span className="text-accent-teal">Microsoft-SAP (TechSaksham)</span>, where I worked on impactful projects and explored emerging technologies hands-on.
             </p>
             
             <p className="text-lg leading-relaxed text-slate-300">
-              My goal is to bridge the gap between beautiful user interfaces and intelligent systems, creating web applications that are not only visually appealing but also powered by AI to solve real-world problems. I'm actively preparing for <span className="text-accent-teal">Ideathon 2025</span> where I'll be leading innovative projects.
+              One of the defining moments in my journey was founding <span className="text-accent-indigo">SemesterHub</span>, a collaborative academic note-sharing platform built to simplify learning and resource-sharing for students. It taught me the value of building tools that solve real-world problems.
+            </p>
+            
+            <p className="text-lg leading-relaxed text-slate-300">
+              Recently, I participated in <span className="text-accent-teal">Ideathon 2025</span>, where I led innovative, problem-solving projects that deepened my commitment to building tech that's both smart and meaningful.
+            </p>
+            
+            <p className="text-lg leading-relaxed text-slate-300">
+              Today, I focus on creating <span className="text-accent-indigo">intelligent, user-friendly web applications</span> that bring together thoughtful design and AI-driven functionality. As I near graduation, I'm excited to contribute to projects that push boundaries, solve real problems, and make technology more human.
             </p>
             
             <p className="text-lg leading-relaxed text-slate-300">
