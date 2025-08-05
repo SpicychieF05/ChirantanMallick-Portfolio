@@ -37,75 +37,80 @@ export default function Experience() {
     {
       title: "AWS Forge Certificate",
       icon: Award,
-      image: "/assets/images/experience/companies/AWS-Forge-certificate.jpg",
+      image:
+        "https://res.cloudinary.com/dlxybta5a/image/upload/v1754429355/AWS-Forge-certificate_dcdub1.jpg",
     },
     {
       title: "Constellation Soft Skills",
       icon: Award,
       image:
-        "/assets/images/experience/companies/constilation_soft_skill-certificate.jpg",
+        "https://res.cloudinary.com/dlxybta5a/image/upload/v1754429357/constilation_soft_skill-certificate_kvpck7.jpg",
     },
     {
       title: "Deloitte Technology Job Simulation",
       icon: Award,
       image:
-        "/assets/images/experience/companies/Deloitte-ForgeTechnology Job Simulation.jpg",
+        "https://res.cloudinary.com/dlxybta5a/image/upload/v1754429359/Deloitte-ForgeTechnology_Job_Simulation_nd4kkc.jpg",
     },
     {
       title: "Edunet AI Program",
       icon: Award,
       image:
-        "/assets/images/experience/companies/Edunet-Artifical-Intelligence-Program.jpg",
+        "https://res.cloudinary.com/dlxybta5a/image/upload/v1754429361/Edunet-Artifical-Intelligence-Program_g87ldr.jpg",
     },
     {
       title: "Google Gen AI Certificate",
       icon: Award,
       image:
-        "/assets/images/experience/companies/Google-Gen-Ai-Certificate.jpg",
+        "https://res.cloudinary.com/dlxybta5a/image/upload/v1754429363/Google-Gen-Ai-Certificate_hhqwjr.jpg",
     },
     {
       title: "IBM Skills Build",
       icon: Award,
       image:
-        "/assets/images/experience/companies/IBMDesign20250723-29-5w2i6j.jpg",
+        "https://res.cloudinary.com/dlxybta5a/image/upload/v1754429365/IBMDesign20250723-29-5w2i6j_suosud.jpg",
     },
     {
       title: "LetsUpgrade C++",
       icon: Award,
-      image: "/assets/images/experience/companies/LetsUpgrade-C++.jpg",
+      image:
+        "https://res.cloudinary.com/dlxybta5a/image/upload/v1754429344/LetsUpgrade-C_umgqko.jpg",
     },
     {
       title: "LetsUpgrade Prompt Engineering",
       icon: Award,
-      image: "/assets/images/experience/companies/LetsUpgrade-PromptEng.jpg",
+      image:
+        "https://res.cloudinary.com/dlxybta5a/image/upload/v1754429346/LetsUpgrade-PromptEng_sb90yw.jpg",
     },
     {
       title: "React Bootcamp Skillected",
       icon: Award,
       image:
-        "/assets/images/experience/companies/React-Bootcamp-Skillected.jpg",
+        "https://res.cloudinary.com/dlxybta5a/image/upload/v1754429346/React-Bootcamp-Skillected_tbqwsv.jpg",
     },
     {
       title: "Seacom University Certificate",
       icon: GraduationCap,
       image:
-        "/assets/images/experience/companies/Secom certificate 01.05.2024..jpg",
+        "https://res.cloudinary.com/dlxybta5a/image/upload/v1754429348/Secom_certificate_01.05.2024._enpn6k.jpg",
     },
     {
       title: "Tata Certificate Forge",
       icon: Award,
-      image: "/assets/images/experience/companies/Tata Certificate-Forge.jpg",
+      image:
+        "https://res.cloudinary.com/dlxybta5a/image/upload/v1754429350/Tata_Certificate-Forge_praypv.jpg",
     },
     {
       title: "TechSaksham Internship",
       icon: Users,
       image:
-        "/assets/images/experience/companies/TechSaksham-Internship-certificate.jpg",
+        "https://res.cloudinary.com/dlxybta5a/image/upload/v1754429352/TechSaksham-Internship-certificate_yepmjf.jpg",
     },
     {
       title: "Udemy Python Certificate",
       icon: Award,
-      image: "/assets/images/experience/companies/Udemy_Python_Certificate.jpg",
+      image:
+        "https://res.cloudinary.com/dlxybta5a/image/upload/v1754429353/Udemy_Python_Certificate_j1dhoj.jpg",
     },
   ];
 
