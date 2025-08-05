@@ -12,6 +12,10 @@
     {
       "source": "/api/(.*)",
       "destination": "/api/placeholder"
+    },
+    {
+      "source": "/((?!assets|api|_next|favicon).*)",
+      "destination": "/index.html"
     }
   ],
   "headers": [
