@@ -163,19 +163,14 @@ export default function Experience() {
                     key={cert.title}
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
-                    whileHover={{ 
-                      scale: 1.8,
-                      zIndex: 50,
-                      transition: { duration: 0.2 }
-                    }}
                     transition={{ duration: 0.4, delay: 0.1 * index }}
                     className="group relative cursor-pointer"
                   >
-                    <div className="glassmorphism rounded-xl overflow-hidden aspect-square transition-all duration-300 group-hover:shadow-2xl group-hover:shadow-accent-indigo/30">
+                    <div className="glassmorphism rounded-xl overflow-hidden aspect-square transition-all duration-300 group-hover:shadow-xl group-hover:shadow-accent-indigo/30 group-hover:scale-105">
                       <img 
                         src={cert.image} 
                         alt={cert.title}
-                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                        className="w-full h-full object-cover transition-transform duration-300"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <div className="absolute bottom-2 left-2 right-2">
@@ -189,10 +184,32 @@ export default function Experience() {
                       </div>
                     </div>
                     
-                    {/* Popup tooltip on hover */}
-                    <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-dark-card px-3 py-2 rounded-lg text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-10 border border-accent-indigo/20">
-                      {cert.title}
-                      <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-dark-card"></div>
+                    {/* Large popup in center on hover */}
+                    <div className="fixed inset-0 z-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                      <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+                      <motion.div 
+                        initial={{ scale: 0.8, opacity: 0 }}
+                        whileHover={{ scale: 1, opacity: 1 }}
+                        transition={{ duration: 0.2 }}
+                        className="relative w-80 h-80 glassmorphism rounded-2xl overflow-hidden shadow-2xl shadow-accent-indigo/40 border border-accent-indigo/30"
+                      >
+                        <img 
+                          src={cert.image} 
+                          alt={cert.title}
+                          className="w-full h-full object-cover"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent">
+                          <div className="absolute bottom-6 left-6 right-6">
+                            <div className="flex items-center space-x-3 mb-3">
+                              <IconComponent className="w-6 h-6 text-accent-teal" />
+                              <span className="text-accent-teal font-mono text-sm">Certificate</span>
+                            </div>
+                            <h4 className="text-white text-xl font-clash font-bold leading-tight">
+                              {cert.title}
+                            </h4>
+                          </div>
+                        </div>
+                      </motion.div>
                     </div>
                   </motion.div>
                 );
