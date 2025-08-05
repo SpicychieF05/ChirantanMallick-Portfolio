@@ -1,0 +1,55 @@
+# Dependencies
+
+node_modules/
+
+# Development files
+
+server/
+shared/
+_.md
+_.log
+_.config.js
+_.config.ts
+drizzle.config.ts
+
+# IDE files
+
+.vscode/
+.idea/
+_.swp
+_.swo
+
+# Git
+
+.git/
+.gitignore
+
+# Environment files
+
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Build artifacts (except dist/public)
+
+dist/index.js
+dist/routes.js
+dist/storage.js
+dist/vite.js
+
+# Test files
+
+**tests**/
+_.test.ts
+_.test.tsx
+_.spec.ts
+_.spec.tsx
+
+# Documentation
+
+docs/
+README.md
+DEVELOPMENT.md
+VERCEL_DEPLOYMENT.md
