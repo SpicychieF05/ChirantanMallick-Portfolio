@@ -1,6 +1,5 @@
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
-import { Link } from "wouter";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -69,12 +68,13 @@ export default function Navbar() {
               >
                 Experience
               </button>
-              <Link
+              <a
                 href="/my-side"
                 className="hover:text-accent-indigo transition-colors duration-300"
+                onClick={() => setIsOpen(false)}
               >
                 My-Side
-              </Link>
+              </a>
               <button
                 onClick={() => scrollToSection("contact")}
                 className="hover:text-accent-indigo transition-colors duration-300"
@@ -132,12 +132,13 @@ export default function Navbar() {
                 >
                   Experience
                 </button>
-                <Link
+                <a
                   href="/my-side"
                   className="hover:text-accent-indigo block w-full text-left transition-colors duration-300"
+                  onClick={() => setIsOpen(false)}
                 >
                   My-Side
-                </Link>
+                </a>
                 <button
                   onClick={() => scrollToSection("contact")}
                   className="hover:text-accent-indigo block w-full text-left transition-colors duration-300"
