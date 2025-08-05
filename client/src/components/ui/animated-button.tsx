@@ -9,7 +9,7 @@ interface AnimatedButtonProps {
 
 export default function AnimatedButton({ children, onClick, type = "button", className = "" }: AnimatedButtonProps) {
   return (
-    <div className={`relative ${className}`}>
+    <div className={`relative flex justify-center ${className}`}>
       <svg style={{position: 'absolute', width: 0, height: 0}}>
         <filter width="300%" x="-100%" height="300%" y="-100%" id="unopaq">
           <feColorMatrix values="1 0 0 0 0 
@@ -31,7 +31,7 @@ export default function AnimatedButton({ children, onClick, type = "button", cla
         </filter>
       </svg>
       
-      <div className="button-container relative">
+      <div className="button-container relative w-fit">
         <button 
           type={type}
           onClick={onClick}
@@ -48,13 +48,13 @@ export default function AnimatedButton({ children, onClick, type = "button", cla
           
           <div className="backdrop absolute -inset-[9900%] bg-radial-backdrop bg-[length:3px_3px] -z-10" />
           
-          <div className="button-border p-0.5 bg-black/30 rounded-2xl"
+          <div className="button-border p-0.5 bg-black/30 rounded-2xl w-48 h-16"
                style={{clipPath: "path('M 90 0 C 121 0 126 5 126 33 C 126 61 121 66 90 66 L 33 66 C 5 66 0 61 0 33 C 0 5 5 0 33 0 Z')"}}>
             
             <div className="spin spin-inside absolute -inset-0.5 rounded-2xl -z-10 blur-sm"
                  style={{filter: 'blur(2px) url(#unopaq3)'}} />
             
-            <div className="button flex justify-center items-center border-none rounded-2xl w-full h-16 bg-dark-base text-white overflow-hidden font-semibold"
+            <div className="button flex justify-center items-center border-none rounded-2xl w-full h-full bg-dark-base text-white overflow-hidden font-semibold"
                  style={{clipPath: "path('M 90 0 C 115 0 120 5 120 30 C 120 55 115 60 90 60 L 30 60 C 5 60 0 55 0 30 C 0 5 5 0 30 0 Z')"}}>
               {children}
             </div>
