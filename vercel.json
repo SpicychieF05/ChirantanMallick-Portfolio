@@ -54,13 +54,5 @@
         }
       ]
     }
-  ],
-  "functions": {
-    "api/placeholder.js": {
-      "runtime": "@vercel/node"
-    },
-    "api/contact.js": {
-      "runtime": "@vercel/node"
-    }
-  }
+  ]
 }
