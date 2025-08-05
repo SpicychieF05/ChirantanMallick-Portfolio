@@ -87,9 +87,9 @@ export default function MySide() {
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <motion.div 
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.3 }}
             className="text-center mb-16"
           >
             <div className="flex items-center justify-center mb-6">
@@ -118,9 +118,9 @@ export default function MySide() {
               return (
                 <motion.div
                   key={photo.id}
-                  initial={{ opacity: 0, scale: 0.9 }}
+                  initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  transition={{ duration: 0.3, delay: index * 0.05 }}
                   whileHover={{ scale: 1.05 }}
                   className="group relative cursor-pointer"
                 >
@@ -168,9 +168,9 @@ export default function MySide() {
 
           {/* Bottom Section */}
           <motion.div 
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
+            transition={{ duration: 0.3, delay: 0.4 }}
             className="text-center mt-16"
           >
             <div className="glassmorphism p-8 rounded-xl max-w-2xl mx-auto">
