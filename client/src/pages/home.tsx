@@ -1,13 +1,13 @@
-import { useEffect } from "react";
-import Navbar from "@/components/ui/navbar";
+import About from "@/components/sections/about";
+import Contact from "@/components/sections/contact";
+import Experience from "@/components/sections/experience-new";
+import Hero from "@/components/sections/hero";
+import Projects from "@/components/sections/projects";
+import Skills from "@/components/sections/skills";
 import Background from "@/components/ui/background";
 import Cursor from "@/components/ui/cursor";
-import Hero from "@/components/sections/hero";
-import About from "@/components/sections/about";
-import Skills from "@/components/sections/skills";
-import Projects from "@/components/sections/projects";
-import Experience from "@/components/sections/experience";
-import Contact from "@/components/sections/contact";
+import Navbar from "@/components/ui/navbar";
+import { useEffect } from "react";
 
 export default function Home() {
   useEffect(() => {
@@ -16,11 +16,11 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-dark-base text-foreground relative">
+    <div className="bg-dark-base relative min-h-screen text-foreground">
       <Background />
       <Cursor />
       <Navbar />
-      
+
       <main>
         <Hero />
         <About />
@@ -30,11 +30,15 @@ export default function Home() {
         <Contact />
       </main>
 
-      <footer className="py-12 text-center relative z-10 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          <div className="glassmorphism p-8 rounded-xl">
-            <p className="text-slate-400 mb-4">Designed & Built by Chirantan Mallick</p>
-            <p className="font-mono text-sm text-slate-500">Made with ❤️ using React.js, Tailwind CSS & Framer Motion</p>
+      <footer className="relative z-10 px-4 py-12 text-center sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-6xl">
+          <div className="glassmorphism rounded-xl p-8">
+            <p className="mb-4 text-slate-400">
+              Designed & Built by Chirantan Mallick
+            </p>
+            <p className="font-mono text-sm text-slate-500">
+              Made with ❤️ using React.js, Tailwind CSS & Framer Motion
+            </p>
           </div>
         </div>
       </footer>
