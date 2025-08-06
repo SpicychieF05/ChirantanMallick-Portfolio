@@ -10,8 +10,8 @@ export default function Projects() {
       image:
         "https://res.cloudinary.com/dlxybta5a/image/upload/v1754429205/salaryscope-project_aivyxb.png",
       tech: ["Python", "Scikit-Learn", "Pandas", "Streamlit", "Data Analysis"],
-      github: "#",
-      live: "#",
+      github: "https://github.com/SpicychieF05/salary_scope",
+      live: "https://salaryscope.streamlit.app/",
       featured: true,
     },
     {
@@ -27,8 +27,8 @@ export default function Projects() {
         "Tailwind CSS",
         "Authentication",
       ],
-      github: "#",
-      live: "#",
+      github: "https://github.com/SpicychieF05/semester-hub",
+      live: "https://semesterhub.vercel.app/",
       featured: true,
     },
     {
@@ -44,8 +44,8 @@ export default function Projects() {
         "PDF Processing",
         "Machine Learning",
       ],
-      github: "#",
-      live: "#",
+      github: "https://github.com/SpicychieF05/Ai-resume-analyser",
+      live: "https://resume-analyser-cm.streamlit.app/",
       featured: true,
     },
   ];
