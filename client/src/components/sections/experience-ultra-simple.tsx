@@ -226,7 +226,7 @@ export default function Experience() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="glassmorphism group rounded-xl p-6 transition-all duration-300 hover:bg-slate-800/40"
             >
-              <div className="mb-4 aspect-[3/4] overflow-hidden rounded-lg bg-slate-700/50">
+              <div className="mb-4 aspect-video h-48 overflow-hidden rounded-lg bg-slate-700/50">
                 <img
                   src={cert.image}
                   alt={cert.title}
