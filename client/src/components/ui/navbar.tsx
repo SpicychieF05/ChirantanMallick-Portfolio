@@ -26,8 +26,8 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 z-50 w-full transition-all duration-300 ${scrolled ? "bg-dark-base/80 backdrop-blur-lg" : ""}`}
     >
-      <div className="glassmorphism">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div className="glassmorphism w-full">
+        <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between">
             <div
               className="font-clash text-accent-indigo cursor-pointer text-xl font-bold"

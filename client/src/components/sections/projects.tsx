@@ -69,15 +69,15 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="relative z-10 overflow-hidden px-4 py-16 sm:px-6 sm:py-24 lg:px-8"
+      className="relative z-10 w-full overflow-hidden px-4 py-16 sm:px-6 sm:py-24 lg:px-8"
     >
-      <div className="mx-auto max-w-6xl">
+      <div className="mx-auto w-full max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="mb-12 flex items-center sm:mb-16"
+          className="mb-12 flex w-full items-center sm:mb-16"
         >
           <h2 className="font-clash text-accent-indigo mr-2 text-2xl font-bold sm:mr-4 sm:text-3xl lg:text-4xl">
             03.
@@ -88,7 +88,7 @@ export default function Projects() {
           <div className="ml-4 h-px flex-1 bg-slate-600 sm:ml-8"></div>
         </motion.div>
 
-        <div className="space-y-16 sm:space-y-20 lg:space-y-24">
+        <div className="w-full space-y-16 sm:space-y-20 lg:space-y-24">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
@@ -100,7 +100,7 @@ export default function Projects() {
                 ease: [0.25, 0.25, 0.25, 0.75],
               }}
               viewport={{ once: true, margin: "-100px" }}
-              className={`grid items-center gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-12 ${index % 2 === 1 ? "lg:grid-flow-col-dense" : ""}`}
+              className={`grid w-full items-center gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-12 ${index % 2 === 1 ? "lg:grid-flow-col-dense" : ""}`}
             >
               <div className={index % 2 === 1 ? "lg:col-start-2" : ""}>
                 <div className="glassmorphism group overflow-hidden rounded-xl transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl lg:hover:scale-105">
