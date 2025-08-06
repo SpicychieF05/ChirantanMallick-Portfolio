@@ -5,40 +5,55 @@ export default function Experience() {
   const experiences = [
     {
       title: "AI/ML Intern",
-      company: "IBM SkillsBuild",
+      company: "AICTE (leveraging IBM SkillsBuild)",
       period: "2025",
       description: [
-        "Developed machine learning models for predictive analytics with focus on salary prediction algorithms",
-        "Collaborated with cross-functional teams to implement AI solutions for real-world business problems",
-        "Gained expertise in data preprocessing, model training, and performance optimization techniques",
-      ],
-      tech: ["Python", "Machine Learning", "Data Analytics", "IBM Watson"],
-    },
-    {
-      title: "Tech Intern",
-      company: "Microsoft-SAP (TechSaksham)",
-      period: "2025",
-      description: [
-        "Participated in comprehensive technology internship program focusing on enterprise solutions",
-        "Developed skills in cloud computing, enterprise software development, and digital transformation",
-        "Contributed to projects involving modern tech stacks and industry best practices",
+        "Developed an AI-powered salary prediction system using Python and Streamlit, implementing Gradient Boosting Regressor model with 96% R² accuracy to deliver precise salary forecasts for job seekers and employers.",
+        "Built responsive web application with modern dark UI design featuring glowing blue accents and mobile-first optimization, enabling seamless user interaction across all devices with real-time salary predictions and personalized career insights.",
+        "Engineered scalable cloud-deployed solution on Streamlit Community Cloud platform, integrating machine learning pipelines with scikit-learn and pandas to process user inputs and deliver instant salary estimates with confidence indicators.",
       ],
       tech: [
-        "Cloud Computing",
-        "Enterprise Solutions",
-        "Digital Transformation",
+        "Salary Prediction",
+        "Machine Learning",
+        "Career Analytics",
+        "Predictive Modeling",
+        "HR Technology",
       ],
     },
     {
-      title: "Frontend Developer",
-      company: "Freelance Projects",
-      period: "2024 - Present",
+      title: "AI Intern",
+      company: "Microsoft-SAP (TechSaksham Program) By Edunet.org",
+      period: "2025",
       description: [
-        "Built responsive web applications using React.js and modern JavaScript frameworks",
-        "Implemented UI/UX designs with focus on user experience and performance optimization",
-        "Integrated APIs and managed state using Redux and Context API",
+        "Developed an AI-powered resume screening system using Python and Streamlit, reducing manual recruitment time by 70% and improving candidate matching accuracy.",
+        "Built intelligent text processing features using TF-IDF vectorization and cosine similarity, enabling HR teams to process 100+ resumes efficiently with quantified match scores.",
+        "Implemented responsive web interface with personalized feedback system, providing actionable career insights to job seekers while maintaining 95% user satisfaction ratings.",
       ],
-      tech: ["React.js", "JavaScript", "Tailwind CSS", "API Integration"],
+      tech: [
+        "Artificial Intelligence",
+        "Talent Analytics",
+        "Recruitment Intelligence",
+        "HR Technology",
+      ],
+    },
+    {
+      title: "Full Stack Ideathon Project",
+      company: "Seacom Skills University Ideathon 2025",
+      period: "2025",
+      description: [
+        "Built comprehensive academic platform using React 18, Supabase, and Tailwind CSS, with authentication-protected downloads and secure user access control.",
+        "Implemented modern glass morphism UI design with dark theme optimization, focusing on responsive layouts and seamless cross-device user experience.",
+        "Integrated Supabase backend APIs with Google OAuth authentication, managing application state and real-time database synchronization for academic resource management.",
+        "Developed admin moderation system with real-time user management capabilities, content approval workflows, and scalable platform administration features.",
+        "Deployed production-ready application on Vercel with optimized CI/CD pipeline, demonstrating full-stack development expertise and modern deployment practices.",
+      ],
+      tech: [
+        "Academic Platform",
+        "React.js",
+        "Supabase Integration",
+        "Student Collaboration",
+        "Educational Technology",
+      ],
     },
   ];
 
@@ -62,10 +77,10 @@ export default function Experience() {
       description: "IBM Design thinking and methodology certification",
     },
     {
-      title: "Deloitte Forge Technology",
+      title: "Deloitte Job Simulation",
       image:
         "https://res.cloudinary.com/dlxybta5a/image/upload/v1754429359/Deloitte-ForgeTechnology_Job_Simulation_nd4kkc.jpg",
-      description: "Deloitte technology job simulation program",
+      description: "Deloitte job simulation program by Forge",
     },
     {
       title: "TechSaksham Internship",
@@ -77,19 +92,19 @@ export default function Experience() {
       title: "React Bootcamp",
       image:
         "https://res.cloudinary.com/dlxybta5a/image/upload/v1754429346/React-Bootcamp-Skillected_tbqwsv.jpg",
-      description: "Comprehensive React.js development bootcamp",
+      description: "Comprehensive React.js development bootcamp by Skillected",
     },
     {
       title: "Tata Certificate Forge",
       image:
         "https://res.cloudinary.com/dlxybta5a/image/upload/v1754429350/Tata_Certificate-Forge_praypv.jpg",
-      description: "Tata Forge technology certification",
+      description: "TATA Data Visualization certification",
     },
     {
       title: "LetsUpgrade C++",
       image:
         "https://res.cloudinary.com/dlxybta5a/image/upload/v1754429344/LetsUpgrade-C_umgqko.jpg",
-      description: "C++ programming certification",
+      description: "C++ Bootcamp certification",
     },
     {
       title: "LetsUpgrade Prompt Engineering",
@@ -107,7 +122,8 @@ export default function Experience() {
       title: "Edunet AI Program",
       image:
         "https://res.cloudinary.com/dlxybta5a/image/upload/v1754429361/Edunet-Artifical-Intelligence-Program_g87ldr.jpg",
-      description: "Artificial Intelligence program certification",
+      description:
+        "Artificial Intelligence program certification by IBM SkillsBuild",
     },
     {
       title: "Constellation Soft Skills",
@@ -116,10 +132,10 @@ export default function Experience() {
       description: "Professional soft skills development",
     },
     {
-      title: "Secom Certificate",
+      title: "Ideathon 2025 Certificate",
       image:
         "https://res.cloudinary.com/dlxybta5a/image/upload/v1754429348/Secom_certificate_01.05.2024._enpn6k.jpg",
-      description: "Secom technology certification",
+      description: "SSU Ideathon 2025 Certificate",
     },
   ];
 
@@ -226,11 +242,11 @@ export default function Experience() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="glassmorphism group rounded-xl p-6 transition-all duration-300 hover:bg-slate-800/40"
             >
-              <div className="mb-4 aspect-video h-48 overflow-hidden rounded-lg bg-slate-700/50">
+              <div className="mb-4 flex h-48 items-center justify-center overflow-hidden rounded-lg bg-slate-700/50">
                 <img
                   src={cert.image}
                   alt={cert.title}
-                  className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
                   loading="lazy"
                 />
               </div>
