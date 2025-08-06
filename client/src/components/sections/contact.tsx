@@ -2,7 +2,6 @@ import AnimatedButton from "@/components/ui/animated-button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import emailjs from "@emailjs/browser";
 import { faLinktree } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
@@ -72,51 +71,33 @@ export default function Contact() {
     setIsLoading(true);
 
     try {
-      // EmailJS configuration - you need to set these in your .env.local file
-      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+      // Using Formspree - replace with your Formspree endpoint
+      const formspreeEndpoint =
+        import.meta.env.VITE_FORMSPREE_ENDPOINT ||
+        "https://formspree.io/f/mallickchirantan@gmail.com";
 
-      // Check if EmailJS is configured
-      if (!serviceId || !templateId || !publicKey) {
-        // Fallback: Open email client with pre-filled data
-        const subject = encodeURIComponent(formData.subject);
-        const body = encodeURIComponent(
-          `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-        );
-        const mailtoLink = `mailto:mallickchirantan@gmail.com?subject=${subject}&body=${body}`;
-        window.open(mailtoLink, "_blank");
+      const response = await fetch(formspreeEndpoint, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          _replyto: formData.email, // Formspree will use this as reply-to
+        }),
+      });
 
-        toast({
-          title: "Email Client Opened",
-          description: "Please send the email from your email client.",
-        });
-        setFormData({ name: "", email: "", subject: "", message: "" });
-        return;
-      }
-
-      // Send email using EmailJS
-      const templateParams = {
-        from_name: formData.name,
-        from_email: formData.email,
-        subject: formData.subject,
-        message: formData.message,
-        to_name: "Chirantan Mallick",
-      };
-
-      const result = await emailjs.send(
-        serviceId,
-        templateId,
-        templateParams,
-        publicKey
-      );
-
-      if (result.status === 200) {
+      if (response.ok) {
         toast({
           title: "Message Sent Successfully!",
           description: "Thank you for your message. I'll get back to you soon!",
         });
         setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        throw new Error("Failed to send message");
       }
     } catch (error) {
       console.error("Error sending email:", error);
@@ -130,10 +111,8 @@ export default function Contact() {
       window.open(mailtoLink, "_blank");
 
       toast({
-        title: "Email Service Unavailable",
-        description:
-          "Opening your email client as fallback. Please send the email manually.",
-        variant: "destructive",
+        title: "Using Email Client",
+        description: "Opening your email client to send the message.",
       });
     } finally {
       setIsLoading(false);
