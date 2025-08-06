@@ -148,7 +148,8 @@ export default function Experience() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.4 }}
+          viewport={{ once: true }}
           className="mb-16 text-center"
         >
           <h2 className="text-accent-teal mb-4 font-mono">
@@ -171,7 +172,8 @@ export default function Experience() {
                 key={index}
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
+                viewport={{ once: true, margin: "-50px" }}
                 className="glassmorphism rounded-xl p-8 transition-all duration-300 hover:bg-slate-800/40"
               >
                 <div className="flex flex-col gap-6 md:flex-row md:items-start">
@@ -221,7 +223,8 @@ export default function Experience() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.4 }}
+          viewport={{ once: true }}
           className="mb-12 text-center"
         >
           <h3 className="font-clash mb-4 text-3xl font-bold sm:text-4xl">
@@ -239,7 +242,8 @@ export default function Experience() {
               key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.3, delay: index * 0.02 }}
+              viewport={{ once: true, margin: "-100px" }}
               className="glassmorphism group rounded-xl p-6 transition-all duration-300 hover:bg-slate-800/40"
             >
               <div className="mb-4 flex h-48 items-center justify-center overflow-hidden rounded-lg bg-slate-700/50">
@@ -248,6 +252,7 @@ export default function Experience() {
                   alt={cert.title}
                   className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
 
