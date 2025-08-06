@@ -2,6 +2,7 @@ import AnimatedButton from "@/components/ui/animated-button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from "@emailjs/browser";
 import { faLinktree } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
@@ -10,6 +11,7 @@ import {
   Github,
   GraduationCap,
   Linkedin,
+  Loader2,
   Mail,
   MapPin,
   Phone,
@@ -23,25 +25,137 @@ export default function Contact() {
     subject: "",
     message: "",
   });
+  const [isLoading, setIsLoading] = useState(false);
+  const [errors, setErrors] = useState<Record<string, string>>({});
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const validateForm = () => {
+    const newErrors: Record<string, string> = {};
+
+    if (!formData.name.trim()) {
+      newErrors.name = "Name is required";
+    }
+
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = "Please enter a valid email";
+    }
+
+    if (!formData.subject.trim()) {
+      newErrors.subject = "Subject is required";
+    }
+
+    if (!formData.message.trim()) {
+      newErrors.message = "Message is required";
+    } else if (formData.message.trim().length < 10) {
+      newErrors.message = "Message must be at least 10 characters";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for your message. I'll get back to you soon!",
-    });
-    setFormData({ name: "", email: "", subject: "", message: "" });
+
+    // Validate form
+    if (!validateForm()) {
+      toast({
+        title: "Validation Error",
+        description: "Please fix the errors in the form",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsLoading(true);
+
+    try {
+      // EmailJS configuration - you need to set these in your .env.local file
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+      // Check if EmailJS is configured
+      if (!serviceId || !templateId || !publicKey) {
+        // Fallback: Open email client with pre-filled data
+        const subject = encodeURIComponent(formData.subject);
+        const body = encodeURIComponent(
+          `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+        );
+        const mailtoLink = `mailto:mallickchirantan@gmail.com?subject=${subject}&body=${body}`;
+        window.open(mailtoLink, "_blank");
+
+        toast({
+          title: "Email Client Opened",
+          description: "Please send the email from your email client.",
+        });
+        setFormData({ name: "", email: "", subject: "", message: "" });
+        return;
+      }
+
+      // Send email using EmailJS
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        to_name: "Chirantan Mallick",
+      };
+
+      const result = await emailjs.send(
+        serviceId,
+        templateId,
+        templateParams,
+        publicKey
+      );
+
+      if (result.status === 200) {
+        toast({
+          title: "Message Sent Successfully!",
+          description: "Thank you for your message. I'll get back to you soon!",
+        });
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      }
+    } catch (error) {
+      console.error("Error sending email:", error);
+
+      // Fallback: Open email client
+      const subject = encodeURIComponent(formData.subject);
+      const body = encodeURIComponent(
+        `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+      );
+      const mailtoLink = `mailto:mallickchirantan@gmail.com?subject=${subject}&body=${body}`;
+      window.open(mailtoLink, "_blank");
+
+      toast({
+        title: "Email Service Unavailable",
+        description:
+          "Opening your email client as fallback. Please send the email manually.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
+    const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
-      [e.target.name]: e.target.value,
+      [name]: value,
     }));
+
+    // Clear error when user starts typing
+    if (errors[name]) {
+      setErrors((prev) => ({
+        ...prev,
+        [name]: "",
+      }));
+    }
   };
 
   return (
@@ -199,8 +313,13 @@ export default function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="bg-dark-card focus:border-accent-indigo focus:ring-accent-indigo w-full rounded-lg border border-slate-600 px-4 py-3 transition-colors duration-300 focus:ring-1"
+                  className={`bg-dark-card focus:border-accent-indigo focus:ring-accent-indigo w-full rounded-lg border px-4 py-3 transition-colors duration-300 focus:ring-1 ${
+                    errors.name ? "border-red-500" : "border-slate-600"
+                  }`}
                 />
+                {errors.name && (
+                  <p className="mt-1 text-sm text-red-400">{errors.name}</p>
+                )}
               </div>
               <div>
                 <label
@@ -216,8 +335,13 @@ export default function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="bg-dark-card focus:border-accent-indigo focus:ring-accent-indigo w-full rounded-lg border border-slate-600 px-4 py-3 transition-colors duration-300 focus:ring-1"
+                  className={`bg-dark-card focus:border-accent-indigo focus:ring-accent-indigo w-full rounded-lg border px-4 py-3 transition-colors duration-300 focus:ring-1 ${
+                    errors.email ? "border-red-500" : "border-slate-600"
+                  }`}
                 />
+                {errors.email && (
+                  <p className="mt-1 text-sm text-red-400">{errors.email}</p>
+                )}
               </div>
               <div>
                 <label
@@ -233,8 +357,13 @@ export default function Contact() {
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  className="bg-dark-card focus:border-accent-indigo focus:ring-accent-indigo w-full rounded-lg border border-slate-600 px-4 py-3 transition-colors duration-300 focus:ring-1"
+                  className={`bg-dark-card focus:border-accent-indigo focus:ring-accent-indigo w-full rounded-lg border px-4 py-3 transition-colors duration-300 focus:ring-1 ${
+                    errors.subject ? "border-red-500" : "border-slate-600"
+                  }`}
                 />
+                {errors.subject && (
+                  <p className="mt-1 text-sm text-red-400">{errors.subject}</p>
+                )}
               </div>
               <div>
                 <label
@@ -250,13 +379,26 @@ export default function Contact() {
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  className="bg-dark-card focus:border-accent-indigo focus:ring-accent-indigo w-full resize-none rounded-lg border border-slate-600 px-4 py-3 transition-colors duration-300 focus:ring-1"
+                  className={`bg-dark-card focus:border-accent-indigo focus:ring-accent-indigo w-full resize-none rounded-lg border px-4 py-3 transition-colors duration-300 focus:ring-1 ${
+                    errors.message ? "border-red-500" : "border-slate-600"
+                  }`}
                 />
+                {errors.message && (
+                  <p className="mt-1 text-sm text-red-400">{errors.message}</p>
+                )}
               </div>
-              <AnimatedButton type="submit" className="w-full">
+              <AnimatedButton
+                type="submit"
+                className="w-full"
+                disabled={isLoading}
+              >
                 <div className="flex items-center justify-center space-x-2">
-                  <Mail className="h-5 w-5" />
-                  <span>Send Message</span>
+                  {isLoading ? (
+                    <Loader2 className="h-5 w-5 animate-spin" />
+                  ) : (
+                    <Mail className="h-5 w-5" />
+                  )}
+                  <span>{isLoading ? "Sending..." : "Send Message"}</span>
                 </div>
               </AnimatedButton>
             </form>
