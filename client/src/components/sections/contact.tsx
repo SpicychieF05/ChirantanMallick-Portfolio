@@ -71,49 +71,136 @@ export default function Contact() {
     setIsLoading(true);
 
     try {
-      // Using Formspree - replace with your Formspree endpoint
-      const formspreeEndpoint =
-        import.meta.env.VITE_FORMSPREE_ENDPOINT ||
-        "https://formspree.io/f/mallickchirantan@gmail.com";
+      // Primary: MailerLite Integration
+      const mailerLiteApiKey = import.meta.env.VITE_MAILERLITE_API_KEY;
+      const mailerLiteGroupId = import.meta.env.VITE_MAILERLITE_GROUP_ID;
 
-      const response = await fetch(formspreeEndpoint, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: formData.name,
+      console.log("Debug - API Key exists:", !!mailerLiteApiKey);
+      console.log("Debug - Group ID:", mailerLiteGroupId);
+
+      if (
+        mailerLiteApiKey &&
+        mailerLiteApiKey !== "your_mailerlite_api_key_here"
+      ) {
+        // Add subscriber to MailerLite (this triggers automation)
+        const requestBody = {
           email: formData.email,
-          subject: formData.subject,
-          message: formData.message,
-          _replyto: formData.email, // Formspree will use this as reply-to
-        }),
-      });
+          name: formData.name,
+          groups: mailerLiteGroupId ? [mailerLiteGroupId] : [],
+        };
 
-      if (response.ok) {
-        toast({
-          title: "Message Sent Successfully!",
-          description: "Thank you for your message. I'll get back to you soon!",
-        });
-        setFormData({ name: "", email: "", subject: "", message: "" });
+        console.log("Debug - Simplified request body:", requestBody);
+
+        const response = await fetch(
+          "https://connect.mailerlite.com/api/subscribers",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${mailerLiteApiKey}`,
+            },
+            body: JSON.stringify(requestBody),
+          }
+        );
+
+        console.log("Debug - Response status:", response.status);
+
+        const responseData = await response.json();
+        console.log("Debug - Response data:", responseData);
+
+        if (response.ok || response.status === 422) {
+          // 422 means subscriber already exists, which is fine
+
+          // Also send the message details via Formspree so you get the actual message
+          try {
+            const notificationResponse = await fetch(
+              "https://formspree.io/f/xzzvjnor",
+              {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                  name: formData.name,
+                  email: formData.email,
+                  subject: formData.subject,
+                  message: formData.message,
+                  _replyto: formData.email,
+                  source: "MailerLite + Formspree Integration",
+                }),
+              }
+            );
+            console.log(
+              "Debug - Formspree notification sent:",
+              notificationResponse.ok
+            );
+          } catch (notificationError) {
+            console.log(
+              "Debug - Formspree notification failed:",
+              notificationError
+            );
+          }
+
+          toast({
+            title: "Message Sent Successfully!",
+            description:
+              "Thank you for your message. You'll receive a confirmation email shortly, and I'll get back to you within 24-48 hours!",
+          });
+          setFormData({ name: "", email: "", subject: "", message: "" });
+        } else {
+          throw new Error(
+            `MailerLite API error: ${response.status} - ${JSON.stringify(responseData)}`
+          );
+        }
       } else {
-        throw new Error("Failed to send message");
+        throw new Error("MailerLite not configured");
       }
     } catch (error) {
-      console.error("Error sending email:", error);
+      console.error("MailerLite error:", error);
 
-      // Fallback: Open email client
-      const subject = encodeURIComponent(formData.subject);
-      const body = encodeURIComponent(
-        `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-      );
-      const mailtoLink = `mailto:mallickchirantan@gmail.com?subject=${subject}&body=${body}`;
-      window.open(mailtoLink, "_blank");
+      // Fallback to Formspree
+      try {
+        const fallbackResponse = await fetch(
+          "https://formspree.io/f/xzzvjnor",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              name: formData.name,
+              email: formData.email,
+              subject: formData.subject,
+              message: formData.message,
+              _replyto: formData.email,
+            }),
+          }
+        );
 
-      toast({
-        title: "Using Email Client",
-        description: "Opening your email client to send the message.",
-      });
+        if (fallbackResponse.ok) {
+          toast({
+            title: "Message Sent Successfully!",
+            description:
+              "Thank you for your message. I'll get back to you soon!",
+          });
+          setFormData({ name: "", email: "", subject: "", message: "" });
+        } else {
+          throw new Error("Fallback failed");
+        }
+      } catch (fallbackError) {
+        // Final fallback: Email client
+        const subject = encodeURIComponent(formData.subject);
+        const body = encodeURIComponent(
+          `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+        );
+        const mailtoLink = `mailto:mallickchirantan@gmail.com?subject=${subject}&body=${body}`;
+        window.open(mailtoLink, "_blank");
+
+        toast({
+          title: "Using Email Client",
+          description: "Opening your email client to send the message.",
+        });
+      }
     } finally {
       setIsLoading(false);
     }
