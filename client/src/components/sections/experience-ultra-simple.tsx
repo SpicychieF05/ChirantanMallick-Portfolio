@@ -142,7 +142,7 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="relative z-10 px-4 py-24 sm:px-6 lg:px-8"
+      className="relative z-10 px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24"
     >
       <div className="mx-auto max-w-6xl">
         <motion.div
@@ -150,23 +150,23 @@ export default function Experience() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
           viewport={{ once: true }}
-          className="mb-16 text-center"
+          className="mb-12 text-center sm:mb-16"
         >
-          <h2 className="text-accent-teal mb-4 font-mono">
+          <h2 className="text-accent-teal mb-3 font-mono text-sm sm:mb-4 sm:text-base">
             03. Where I've Worked
           </h2>
-          <h3 className="font-clash mb-8 text-4xl font-bold sm:text-5xl">
+          <h3 className="font-clash mb-6 text-3xl font-bold sm:mb-8 sm:text-4xl lg:text-5xl">
             Experience
           </h3>
-          <p className="mx-auto max-w-2xl text-lg leading-relaxed text-slate-300">
+          <p className="mx-auto max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">
             My journey through various roles and projects, building expertise in
             AI/ML, web development, and emerging technologies.
           </p>
         </motion.div>
 
         {/* Experience Timeline */}
-        <div className="mb-16">
-          <div className="space-y-8">
+        <div className="mb-12 sm:mb-16">
+          <div className="space-y-6 sm:space-y-8">
             {experiences.map((experience, index) => (
               <motion.div
                 key={index}
@@ -174,39 +174,39 @@ export default function Experience() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
                 viewport={{ once: true, margin: "-50px" }}
-                className="glassmorphism rounded-xl p-8 transition-all duration-300 hover:bg-slate-800/40"
+                className="glassmorphism rounded-xl p-4 transition-all duration-300 hover:bg-slate-800/40 sm:p-6 lg:p-8"
               >
-                <div className="flex flex-col gap-6 md:flex-row md:items-start">
+                <div className="flex flex-col gap-4 sm:gap-6 md:flex-row md:items-start">
                   <div className="md:w-1/4">
-                    <h4 className="font-clash mb-2 text-xl font-bold text-white">
+                    <h4 className="font-clash mb-2 text-lg font-bold text-white sm:text-xl">
                       {experience.title}
                     </h4>
-                    <h5 className="text-accent-teal mb-2 font-semibold">
+                    <h5 className="text-accent-teal mb-2 text-sm font-semibold sm:text-base">
                       {experience.company}
                     </h5>
-                    <span className="font-mono text-sm text-slate-400">
+                    <span className="font-mono text-xs text-slate-400 sm:text-sm">
                       {experience.period}
                     </span>
                   </div>
 
                   <div className="md:w-3/4">
-                    <ul className="mb-6 space-y-3">
+                    <ul className="mb-4 space-y-2 sm:mb-6 sm:space-y-3">
                       {experience.description.map((item, itemIndex) => (
                         <li
                           key={itemIndex}
-                          className="flex items-start gap-3 text-slate-300"
+                          className="flex items-start gap-2 text-sm text-slate-300 sm:gap-3 sm:text-base"
                         >
-                          <ChevronRight className="text-accent-teal mt-1 h-4 w-4 flex-shrink-0" />
+                          <ChevronRight className="text-accent-teal mt-1 h-3 w-3 flex-shrink-0 sm:h-4 sm:w-4" />
                           <span>{item}</span>
                         </li>
                       ))}
                     </ul>
 
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-1.5 sm:gap-2">
                       {experience.tech.map((tech, techIndex) => (
                         <span
                           key={techIndex}
-                          className="bg-accent-teal/10 text-accent-teal rounded-full px-3 py-1 font-mono text-sm"
+                          className="bg-accent-teal/10 text-accent-teal rounded-full px-2 py-0.5 font-mono text-xs sm:px-3 sm:py-1 sm:text-sm"
                         >
                           {tech}
                         </span>
@@ -225,18 +225,18 @@ export default function Experience() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
           viewport={{ once: true }}
-          className="mb-12 text-center"
+          className="mb-8 text-center sm:mb-12"
         >
-          <h3 className="font-clash mb-4 text-3xl font-bold sm:text-4xl">
+          <h3 className="font-clash mb-3 text-2xl font-bold sm:mb-4 sm:text-3xl lg:text-4xl">
             Certifications
           </h3>
-          <p className="mx-auto max-w-2xl text-lg leading-relaxed text-slate-300">
+          <p className="mx-auto max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">
             Professional certifications and achievements that showcase my
             commitment to continuous learning.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
           {certificates.map((cert, index) => (
             <motion.div
               key={index}
@@ -244,9 +244,9 @@ export default function Experience() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: index * 0.02 }}
               viewport={{ once: true, margin: "-100px" }}
-              className="glassmorphism group rounded-xl p-6 transition-all duration-300 hover:bg-slate-800/40"
+              className="glassmorphism group rounded-xl p-4 transition-all duration-300 hover:bg-slate-800/40 sm:p-6"
             >
-              <div className="mb-4 flex h-48 items-center justify-center overflow-hidden rounded-lg bg-slate-700/50">
+              <div className="mb-3 flex h-40 items-center justify-center overflow-hidden rounded-lg bg-slate-700/50 sm:mb-4 sm:h-48">
                 <img
                   src={cert.image}
                   alt={cert.title}
@@ -256,10 +256,12 @@ export default function Experience() {
                 />
               </div>
 
-              <h4 className="font-clash mb-2 text-lg font-bold text-white">
+              <h4 className="font-clash mb-2 text-base font-bold text-white sm:text-lg">
                 {cert.title}
               </h4>
-              <p className="text-sm text-slate-400">{cert.description}</p>
+              <p className="text-xs text-slate-400 sm:text-sm">
+                {cert.description}
+              </p>
             </motion.div>
           ))}
         </div>

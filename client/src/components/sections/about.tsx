@@ -12,31 +12,34 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="relative z-10 px-4 py-24 sm:px-6 lg:px-8">
+    <section
+      id="about"
+      className="relative z-10 px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24"
+    >
       <div className="mx-auto max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="mb-16 flex items-center"
+          className="mb-12 flex items-center sm:mb-16"
         >
-          <h2 className="font-clash text-accent-indigo mr-4 text-3xl font-bold sm:text-4xl">
+          <h2 className="font-clash text-accent-indigo mr-3 text-2xl font-bold sm:mr-4 sm:text-3xl lg:text-4xl">
             01.
           </h2>
-          <h2 className="font-clash text-3xl font-bold sm:text-4xl">
+          <h2 className="font-clash text-2xl font-bold sm:text-3xl lg:text-4xl">
             About Me
           </h2>
-          <div className="ml-8 h-px flex-1 bg-slate-600"></div>
+          <div className="ml-4 h-px flex-1 bg-slate-600 sm:ml-8"></div>
         </motion.div>
 
-        <div className="grid items-center gap-12 lg:grid-cols-2">
+        <div className="grid items-center gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-12">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="space-y-6"
+            className="space-y-4 sm:space-y-6"
           >
-            <p className="text-lg leading-relaxed text-slate-300">
+            <p className="text-base leading-relaxed text-slate-300 sm:text-lg">
               I'm <span className="text-accent-teal">Chirantan Mallick</span>, a
               final-year BCA student at{" "}
               <span className="text-accent-teal">Seacom Skills University</span>
@@ -47,7 +50,7 @@ export default function About() {
               power of artificial intelligence.
             </p>
 
-            <p className="text-lg leading-relaxed text-slate-300">
+            <p className="text-base leading-relaxed text-slate-300 sm:text-lg">
               I started with web development, gradually expanding into AI and
               its integration with modern applications. Along the way, I gained
               practical experience through internships with{" "}
@@ -59,7 +62,7 @@ export default function About() {
               technologies hands-on.
             </p>
 
-            <p className="text-lg leading-relaxed text-slate-300">
+            <p className="text-base leading-relaxed text-slate-300 sm:text-lg">
               One of the defining moments in my journey was founding{" "}
               <span className="text-accent-indigo">SemesterHub</span>, a
               collaborative academic note-sharing platform built to simplify
@@ -67,14 +70,14 @@ export default function About() {
               of building tools that solve real-world problems.
             </p>
 
-            <p className="text-lg leading-relaxed text-slate-300">
+            <p className="text-base leading-relaxed text-slate-300 sm:text-lg">
               Recently, I participated in{" "}
               <span className="text-accent-teal">Ideathon 2025</span>, where I
               led innovative, problem-solving projects that deepened my
               commitment to building tech that's both smart and meaningful.
             </p>
 
-            <p className="text-lg leading-relaxed text-slate-300">
+            <p className="text-base leading-relaxed text-slate-300 sm:text-lg">
               Today, I focus on creating{" "}
               <span className="text-accent-indigo">
                 intelligent, user-friendly web applications
@@ -85,11 +88,11 @@ export default function About() {
               human.
             </p>
 
-            <p className="text-lg leading-relaxed text-slate-300">
+            <p className="text-base leading-relaxed text-slate-300 sm:text-lg">
               Here are a few technologies I've been working with recently:
             </p>
 
-            <div className="grid grid-cols-2 gap-2 font-mono text-sm">
+            <div className="grid grid-cols-1 gap-1.5 font-mono text-sm sm:grid-cols-2 sm:gap-2">
               {technologies.map((tech, index) => (
                 <motion.div
                   key={tech}
@@ -109,10 +112,10 @@ export default function About() {
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="flex justify-center"
+            className="flex justify-center lg:justify-end"
           >
             <div className="relative">
-              <div className="glassmorphism h-96 w-80 overflow-hidden rounded-2xl transition-transform duration-300 hover:scale-105">
+              <div className="glassmorphism h-72 w-64 overflow-hidden rounded-2xl transition-transform duration-300 hover:scale-105 sm:h-80 sm:w-72 lg:h-96 lg:w-80">
                 <img
                   src="https://res.cloudinary.com/dlxybta5a/image/upload/v1754429079/Chirantan-mallick-hero-image_sdw6ld.jpg"
                   alt="Chirantan Mallick"
@@ -124,7 +127,7 @@ export default function About() {
                   }}
                 />
               </div>
-              <div className="border-accent-teal absolute inset-0 -z-10 translate-x-4 translate-y-4 rounded-2xl border-2"></div>
+              <div className="border-accent-teal absolute inset-0 -z-10 translate-x-3 translate-y-3 rounded-2xl border-2 sm:translate-x-4 sm:translate-y-4"></div>
             </div>
           </motion.div>
         </div>

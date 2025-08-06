@@ -225,38 +225,43 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative z-10 px-4 py-24 sm:px-6 lg:px-8">
+    <section
+      id="contact"
+      className="relative z-10 px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24"
+    >
       <div className="mx-auto max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="mb-16 text-center"
+          className="mb-12 text-center sm:mb-16"
         >
-          <h2 className="text-accent-teal mb-4 font-mono">05. What's Next?</h2>
-          <h3 className="font-clash mb-8 text-4xl font-bold sm:text-5xl">
+          <h2 className="text-accent-teal mb-3 font-mono text-sm sm:mb-4 sm:text-base">
+            05. What's Next?
+          </h2>
+          <h3 className="font-clash mb-6 text-3xl font-bold sm:mb-8 sm:text-4xl lg:text-5xl">
             Get In Touch
           </h3>
-          <p className="mx-auto max-w-2xl text-lg leading-relaxed text-slate-300">
+          <p className="mx-auto max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">
             I'm currently looking for new opportunities and exciting projects to
             work on. Whether you have a question, want to collaborate, or just
             want to say hi, I'll try my best to get back to you!
           </p>
         </motion.div>
 
-        <div className="grid gap-12 lg:grid-cols-2">
+        <div className="grid gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-12">
           {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="space-y-8"
+            className="space-y-6 sm:space-y-8"
           >
-            <div className="glassmorphism rounded-xl p-6">
-              <h4 className="font-clash mb-6 text-xl font-semibold">
+            <div className="glassmorphism rounded-xl p-4 sm:p-6">
+              <h4 className="font-clash mb-4 text-lg font-semibold sm:mb-6 sm:text-xl">
                 Contact Information
               </h4>
-              <div className="space-y-4">
+              <div className="space-y-3 sm:space-y-4">
                 <div className="flex items-center space-x-4">
                   <Mail className="text-accent-teal h-5 w-5" />
                   <a
@@ -268,24 +273,24 @@ export default function Contact() {
                     mallickchirantan@gmail.com
                   </a>
                 </div>
-                <div className="flex items-center space-x-4">
-                  <Phone className="text-accent-teal h-5 w-5" />
+                <div className="flex items-center space-x-3 sm:space-x-4">
+                  <Phone className="text-accent-teal h-4 w-4 sm:h-5 sm:w-5" />
                   <a
                     href="tel:+918327438929"
-                    className="hover:text-accent-indigo text-slate-300 transition-colors duration-300"
+                    className="hover:text-accent-indigo text-sm text-slate-300 transition-colors duration-300 sm:text-base"
                   >
                     +91 8327438929
                   </a>
                 </div>
-                <div className="flex items-center space-x-4">
-                  <MapPin className="text-accent-teal h-5 w-5" />
-                  <span className="text-slate-300">
+                <div className="flex items-center space-x-3 sm:space-x-4">
+                  <MapPin className="text-accent-teal h-4 w-4 sm:h-5 sm:w-5" />
+                  <span className="text-sm text-slate-300 sm:text-base">
                     Bolpur, Birbhum, West Bengal, India
                   </span>
                 </div>
-                <div className="flex items-center space-x-4">
-                  <GraduationCap className="text-accent-teal h-5 w-5" />
-                  <span className="text-slate-300">
+                <div className="flex items-center space-x-3 sm:space-x-4">
+                  <GraduationCap className="text-accent-teal h-4 w-4 sm:h-5 sm:w-5" />
+                  <span className="text-sm text-slate-300 sm:text-base">
                     Seacom Skills University
                   </span>
                 </div>
@@ -293,18 +298,18 @@ export default function Contact() {
             </div>
 
             {/* Social Links */}
-            <div className="glassmorphism rounded-xl p-6">
-              <h4 className="font-clash mb-6 text-xl font-semibold">
+            <div className="glassmorphism rounded-xl p-4 sm:p-6">
+              <h4 className="font-clash mb-4 text-lg font-semibold sm:mb-6 sm:text-xl">
                 Connect With Me
               </h4>
-              <div className="flex space-x-6">
+              <div className="flex space-x-4 sm:space-x-6">
                 <a
                   href="https://github.com/spicychief05"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-accent-indigo text-slate-300 transition-all duration-300 hover:scale-110"
                 >
-                  <Github className="h-6 w-6" />
+                  <Github className="h-5 w-5 sm:h-6 sm:w-6" />
                 </a>
                 <a
                   href="https://www.linkedin.com/in/chirantan-mallick"
@@ -312,7 +317,7 @@ export default function Contact() {
                   rel="noopener noreferrer"
                   className="hover:text-accent-indigo text-slate-300 transition-all duration-300 hover:scale-110"
                 >
-                  <Linkedin className="h-6 w-6" />
+                  <Linkedin className="h-5 w-5 sm:h-6 sm:w-6" />
                 </a>
                 <a
                   href="mailto:mallickchirantan@gmail.com"
@@ -320,13 +325,13 @@ export default function Contact() {
                   rel="noopener noreferrer"
                   className="hover:text-accent-teal text-slate-300 transition-all duration-300 hover:scale-110"
                 >
-                  <Mail className="h-6 w-6" />
+                  <Mail className="h-5 w-5 sm:h-6 sm:w-6" />
                 </a>
                 <a
                   href="tel:+918327438929"
                   className="hover:text-accent-indigo text-slate-300 transition-all duration-300 hover:scale-110"
                 >
-                  <Phone className="h-6 w-6" />
+                  <Phone className="h-5 w-5 sm:h-6 sm:w-6" />
                 </a>
                 <a
                   href="https://linktr.ee/chirantan_mallick"
@@ -334,7 +339,10 @@ export default function Contact() {
                   rel="noopener noreferrer"
                   className="hover:text-accent-teal text-slate-300 transition-all duration-300 hover:scale-110"
                 >
-                  <FontAwesomeIcon icon={faLinktree} className="h-6 w-6" />
+                  <FontAwesomeIcon
+                    icon={faLinktree}
+                    className="h-5 w-5 sm:h-6 sm:w-6"
+                  />
                 </a>
               </div>
             </div>
@@ -346,9 +354,9 @@ export default function Contact() {
                 className="gradient-border group inline-block"
                 download="Chirantan_Mallick_Resume.pdf"
               >
-                <div className="bg-dark-base hover:bg-dark-card flex items-center space-x-2 rounded-xl px-8 py-4 font-semibold transition-all duration-300 group-hover:scale-105">
-                  <Download className="h-5 w-5" />
-                  <span>Download Resume</span>
+                <div className="bg-dark-base hover:bg-dark-card flex items-center space-x-2 rounded-xl px-6 py-3 font-semibold transition-all duration-300 group-hover:scale-105 sm:px-8 sm:py-4">
+                  <Download className="h-4 w-4 sm:h-5 sm:w-5" />
+                  <span className="text-sm sm:text-base">Download Resume</span>
                 </div>
               </a>
             </div>
@@ -359,12 +367,12 @@ export default function Contact() {
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="glassmorphism rounded-xl p-8"
+            className="glassmorphism rounded-xl p-6 sm:p-8"
           >
-            <h4 className="font-clash mb-6 text-xl font-semibold">
+            <h4 className="font-clash mb-4 text-lg font-semibold sm:mb-6 sm:text-xl">
               Send Message
             </h4>
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
               <div>
                 <label
                   htmlFor="name"
