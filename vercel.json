@@ -6,15 +6,7 @@
   "devCommand": "npm run dev",
   "rewrites": [
     {
-      "source": "/api/contact",
-      "destination": "/api/contact"
-    },
-    {
-      "source": "/api/(.*)",
-      "destination": "/api/placeholder"
-    },
-    {
-      "source": "/((?!assets|api|_next|favicon).*)",
+      "source": "/((?!assets|_next|favicon).*)",
       "destination": "/index.html"
     }
   ],

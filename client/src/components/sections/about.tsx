@@ -118,10 +118,6 @@ export default function About() {
                   alt="Chirantan Mallick"
                   className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
                   onError={(e) => {
-                    console.log(
-                      "Profile image failed to load:",
-                      e.currentTarget.src
-                    );
                     // Fallback to a placeholder
                     e.currentTarget.src =
                       "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='320' viewBox='0 0 320 320'%3E%3Crect width='320' height='320' fill='%23334155' rx='12'/%3E%3Ctext x='50%25' y='45%25' dominant-baseline='central' text-anchor='middle' font-family='Arial, sans-serif' font-size='24' fill='%2394a3b8'%3EProfile Photo%3C/text%3E%3Ctext x='50%25' y='65%25' dominant-baseline='central' text-anchor='middle' font-family='Arial, sans-serif' font-size='16' fill='%2364748b'%3EPlace your image here%3C/text%3E%3C/svg%3E";

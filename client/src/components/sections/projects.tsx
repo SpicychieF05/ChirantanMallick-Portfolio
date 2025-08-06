@@ -101,9 +101,6 @@ export default function Projects() {
                       alt={project.title}
                       className="absolute inset-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
                       onError={(e) => {
-                        console.log(
-                          `Project image failed to load: ${project.image}`
-                        );
                         // Fallback to a placeholder with project name
                         e.currentTarget.src = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23334155' rx='8'/%3E%3Ctext x='50%25' y='45%25' dominant-baseline='central' text-anchor='middle' font-family='Arial, sans-serif' font-size='24' fill='%2394a3b8'%3E${project.title}%3C/text%3E%3Ctext x='50%25' y='65%25' dominant-baseline='central' text-anchor='middle' font-family='Arial, sans-serif' font-size='14' fill='%2364748b'%3EScreenshot needed%3C/text%3E%3C/svg%3E`;
                       }}
