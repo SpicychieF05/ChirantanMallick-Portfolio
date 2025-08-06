@@ -62,12 +62,11 @@ export default function Hero() {
             transition={{ delay: 2.5 }}
             className="mx-auto mb-8 max-w-2xl px-2 text-sm leading-relaxed text-slate-300 sm:mb-12 sm:px-0 sm:text-lg lg:text-xl"
           >
-            I'm a final-year BCA student at Seacom Skills University, passionate
-            about creating innovative web experiences and exploring the
-            frontiers of artificial intelligence. Currently building{" "}
-            <span className="text-accent-teal">SemesterHub</span> and working on
-            ML projects with{" "}
-            <span className="text-accent-indigo">96% accuracy</span>.
+            "Power resides where men believe it resides. It's a trick, a shadow
+            on the wall. And, a very small man can cast a very large shadow"
+            <span className="text-accent-teal mt-2 block italic">
+              Lord Varys
+            </span>
           </motion.p>
         </motion.div>
 
