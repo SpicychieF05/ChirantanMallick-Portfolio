@@ -36,7 +36,7 @@ export default function Hero() {
             transition={{ delay: 0.5 }}
             className="text-accent-teal mb-3 font-mono text-sm sm:mb-4 sm:text-lg"
           >
-            Hello, my name is
+            Hello there 👋🏻, my name is
           </motion.p>
 
           <h1 className="font-clash mb-3 text-3xl font-bold leading-tight sm:mb-4 sm:text-5xl md:text-6xl lg:text-7xl">
