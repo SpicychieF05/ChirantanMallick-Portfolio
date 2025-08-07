@@ -43,6 +43,32 @@ export default function Navbar() {
     }
   };
 
+  const handleHomeClick = () => {
+    setIsOpen(false);
+
+    // If not on home page, navigate to home first
+    if (location !== "/") {
+      setLocation("/");
+      // Wait a bit for the page to load, then scroll to hero
+      setTimeout(() => {
+        const heroElement = document.querySelector("#home");
+        if (heroElement) {
+          heroElement.scrollIntoView({ behavior: "smooth" });
+        } else {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+      }, 100);
+    } else {
+      // Already on home page, just scroll to hero section
+      const heroElement = document.querySelector("#home");
+      if (heroElement) {
+        heroElement.scrollIntoView({ behavior: "smooth" });
+      } else {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    }
+  };
+
   return (
     <motion.nav
       initial={{ y: -100 }}
@@ -60,7 +86,7 @@ export default function Navbar() {
             className="flex-shrink-0 cursor-pointer"
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 400, damping: 17 }}
-            onClick={() => setLocation("/")}
+            onClick={handleHomeClick}
           >
             <motion.span
               className="font-apricots text-2xl font-bold text-white sm:text-3xl lg:text-4xl"

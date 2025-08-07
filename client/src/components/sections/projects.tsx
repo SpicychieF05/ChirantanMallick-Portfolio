@@ -4,17 +4,6 @@ import { ExternalLink, Github } from "lucide-react";
 export default function Projects() {
   const projects = [
     {
-      title: "SalaryScope",
-      description:
-        "An intelligent Machine Learning application that predicts software developer salaries with 96% R² accuracy. Built using advanced regression algorithms and trained on comprehensive industry data to provide accurate salary insights for different roles, experience levels, and locations.",
-      image:
-        "https://res.cloudinary.com/dlxybta5a/image/upload/v1754429205/salaryscope-project_aivyxb.png",
-      tech: ["Python", "Scikit-Learn", "Pandas", "Streamlit", "Data Analysis"],
-      github: "https://github.com/SpicychieF05/salary_scope",
-      live: "https://salaryscope.streamlit.app/",
-      featured: true,
-    },
-    {
       title: "SemesterHub",
       description:
         "A comprehensive academic note-sharing platform built with React.js and Firebase, designed to foster collaboration among students. Features real-time document sharing, organized course materials, user authentication, and a clean, intuitive interface for seamless academic resource management.",
@@ -29,6 +18,17 @@ export default function Projects() {
       ],
       github: "https://github.com/SpicychieF05/semester-hub",
       live: "https://semesterhub.vercel.app/",
+      featured: true,
+    },
+    {
+      title: "SalaryScope",
+      description:
+        "An intelligent Machine Learning application that predicts software developer salaries with 96% R² accuracy. Built using advanced regression algorithms and trained on comprehensive industry data to provide accurate salary insights for different roles, experience levels, and locations.",
+      image:
+        "https://res.cloudinary.com/dlxybta5a/image/upload/v1754429205/salaryscope-project_aivyxb.png",
+      tech: ["Python", "Scikit-Learn", "Pandas", "Streamlit", "Data Analysis"],
+      github: "https://github.com/SpicychieF05/salary_scope",
+      live: "https://salaryscope.streamlit.app/",
       featured: true,
     },
     {

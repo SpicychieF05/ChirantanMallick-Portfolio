@@ -1,0 +1,316 @@
+import { motion } from "framer-motion";
+import { ChevronRight, X } from "lucide-react";
+import { useState } from "react";
+
+export default function Experience() {
+  const [selectedCertificate, setSelectedCertificate] = useState<string | null>(
+    null
+  );
+  const experiences = [
+    {
+      title: "AI/ML Intern",
+      company: "AICTE (leveraging IBM SkillsBuild)",
+      period: "2025",
+      description: [
+        "Developed an AI-powered salary prediction system using Python and Streamlit, implementing Gradient Boosting Regressor model with 96% R² accuracy to deliver precise salary forecasts for job seekers and employers.",
+        "Built responsive web application with modern dark UI design featuring glowing blue accents and mobile-first optimization, enabling seamless user interaction across all devices with real-time salary predictions and personalized career insights.",
+        "Engineered scalable cloud-deployed solution on Streamlit Community Cloud platform, integrating machine learning pipelines with scikit-learn and pandas to process user inputs and deliver instant salary estimates with confidence indicators.",
+      ],
+      tech: [
+        "Salary Prediction",
+        "Machine Learning",
+        "Career Analytics",
+        "Predictive Modeling",
+        "HR Technology",
+      ],
+    },
+    {
+      title: "AI Intern",
+      company: "Microsoft-SAP (TechSaksham Program) By Edunet.org",
+      period: "2025",
+      description: [
+        "Developed an AI-powered resume screening system using Python and Streamlit, reducing manual recruitment time by 70% and improving candidate matching accuracy.",
+        "Built intelligent text processing features using TF-IDF vectorization and cosine similarity, enabling HR teams to process 100+ resumes efficiently with quantified match scores.",
+        "Implemented responsive web interface with personalized feedback system, providing actionable career insights to job seekers while maintaining 95% user satisfaction ratings.",
+      ],
+      tech: [
+        "Artificial Intelligence",
+        "Talent Analytics",
+        "Recruitment Intelligence",
+        "HR Technology",
+      ],
+    },
+    {
+      title: "Full Stack Ideathon Project",
+      company: "Seacom Skills University Ideathon 2025",
+      period: "2025",
+      description: [
+        "Built comprehensive academic platform using React 18, Supabase, and Tailwind CSS, with authentication-protected downloads and secure user access control.",
+        "Implemented modern glass morphism UI design with dark theme optimization, focusing on responsive layouts and seamless cross-device user experience.",
+        "Integrated Supabase backend APIs with Google OAuth authentication, managing application state and real-time database synchronization for academic resource management.",
+        "Developed admin moderation system with real-time user management capabilities, content approval workflows, and scalable platform administration features.",
+        "Deployed production-ready application on Vercel with optimized CI/CD pipeline, demonstrating full-stack development expertise and modern deployment practices.",
+      ],
+      tech: [
+        "Academic Platform",
+        "React.js",
+        "Supabase Integration",
+        "Student Collaboration",
+        "Educational Technology",
+      ],
+    },
+  ];
+
+  const certificates = [
+    {
+      title: "AWS Forge Certificate",
+      image:
+        "https://res.cloudinary.com/dlxybta5a/image/upload/v1754429355/AWS-Forge-certificate_dcdub1.jpg",
+      description: "Amazon Web Services cloud computing certification",
+    },
+    {
+      title: "Constellation Soft Skills",
+      image:
+        "https://res.cloudinary.com/dlxybta5a/image/upload/v1754429357/constilation_soft_skill-certificate_kvpck7.jpg",
+      description: "Professional soft skills development",
+    },
+    {
+      title: "Deloitte Job Simulation",
+      image:
+        "https://res.cloudinary.com/dlxybta5a/image/upload/v1754429359/Deloitte-ForgeTechnology_Job_Simulation_nd4kkc.jpg",
+      description: "Deloitte job simulation program by Forge",
+    },
+    {
+      title: "Edunet AI Program",
+      image:
+        "https://res.cloudinary.com/dlxybta5a/image/upload/v1754429361/Edunet-Artifical-Intelligence-Program_g87ldr.jpg",
+      description:
+        "Artificial Intelligence program certification by IBM SkillsBuild",
+    },
+    {
+      title: "Google Gen AI Certificate",
+      image:
+        "https://res.cloudinary.com/dlxybta5a/image/upload/v1754429363/Google-Gen-Ai-Certificate_hhqwjr.jpg",
+      description: "Google Generative AI certification program",
+    },
+    {
+      title: "IBM Design Certificate",
+      image:
+        "https://res.cloudinary.com/dlxybta5a/image/upload/v1754429365/IBMDesign20250723-29-5w2i6j_suosud.jpg",
+      description: "IBM Design thinking and methodology certification",
+    },
+    {
+      title: "Ideathon 2025 Certificate",
+      image:
+        "https://res.cloudinary.com/dlxybta5a/image/upload/v1754429348/Secom_certificate_01.05.2024._enpn6k.jpg",
+      description: "SSU Ideathon 2025 Certificate",
+    },
+    {
+      title: "LetsUpgrade C++",
+      image:
+        "https://res.cloudinary.com/dlxybta5a/image/upload/v1754429344/LetsUpgrade-C_umgqko.jpg",
+      description: "C++ Bootcamp certification",
+    },
+    {
+      title: "LetsUpgrade Prompt Engineering",
+      image:
+        "https://res.cloudinary.com/dlxybta5a/image/upload/v1754429346/LetsUpgrade-PromptEng_sb90yw.jpg",
+      description: "AI Prompt Engineering certification",
+    },
+    {
+      title: "React Bootcamp",
+      image:
+        "https://res.cloudinary.com/dlxybta5a/image/upload/v1754429346/React-Bootcamp-Skillected_tbqwsv.jpg",
+      description: "Comprehensive React.js development bootcamp by Skillected",
+    },
+    {
+      title: "Tata Certificate Forge",
+      image:
+        "https://res.cloudinary.com/dlxybta5a/image/upload/v1754429350/Tata_Certificate-Forge_praypv.jpg",
+      description: "TATA Data Visualization certification",
+    },
+    {
+      title: "TechSaksham Internship",
+      image:
+        "https://res.cloudinary.com/dlxybta5a/image/upload/v1754429352/TechSaksham-Internship-certificate_yepmjf.jpg",
+      description: "Microsoft-SAP TechSaksham internship program",
+    },
+    {
+      title: "Udemy Python Certificate",
+      image:
+        "https://res.cloudinary.com/dlxybta5a/image/upload/v1754429353/Udemy_Python_Certificate_j1dhoj.jpg",
+      description: "Complete Python programming course",
+    },
+  ];
+
+  return (
+    <section
+      id="experience"
+      className="relative z-10 px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24"
+    >
+      <div className="mx-auto max-w-6xl">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
+          viewport={{ once: true }}
+          className="mb-12 text-center sm:mb-16"
+        >
+          <h2 className="text-accent-teal mb-3 font-mono text-sm sm:mb-4 sm:text-base">
+            03. Where I've Worked
+          </h2>
+          <h3 className="font-clash mb-6 text-3xl font-bold sm:mb-8 sm:text-4xl lg:text-5xl">
+            Experience
+          </h3>
+          <p className="mx-auto max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">
+            My journey through various roles and projects, building expertise in
+            AI/ML, web development, and emerging technologies.
+          </p>
+        </motion.div>
+
+        {/* Experience Timeline */}
+        <div className="mb-12 sm:mb-16">
+          <div className="space-y-6 sm:space-y-8">
+            {experiences.map((experience, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
+                viewport={{ once: true, margin: "-50px" }}
+                className="glassmorphism rounded-xl p-4 transition-all duration-300 hover:bg-slate-800/40 sm:p-6 lg:p-8"
+              >
+                <div className="flex flex-col gap-4 sm:gap-6 md:flex-row md:items-start">
+                  <div className="md:w-1/4">
+                    <h4 className="font-clash mb-2 text-lg font-bold text-white sm:text-xl">
+                      {experience.title}
+                    </h4>
+                    <h5 className="text-accent-teal mb-2 text-sm font-semibold sm:text-base">
+                      {experience.company}
+                    </h5>
+                    <span className="font-mono text-xs text-slate-400 sm:text-sm">
+                      {experience.period}
+                    </span>
+                  </div>
+
+                  <div className="md:w-3/4">
+                    <ul className="mb-4 space-y-2 sm:mb-6 sm:space-y-3">
+                      {experience.description.map((item, itemIndex) => (
+                        <li
+                          key={itemIndex}
+                          className="flex items-start gap-2 text-sm text-slate-300 sm:gap-3 sm:text-base"
+                        >
+                          <ChevronRight className="text-accent-teal mt-1 h-3 w-3 flex-shrink-0 sm:h-4 sm:w-4" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                      {experience.tech.map((tech, techIndex) => (
+                        <span
+                          key={techIndex}
+                          className="bg-accent-teal/10 text-accent-teal rounded-full px-2 py-0.5 font-mono text-xs sm:px-3 sm:py-1 sm:text-sm"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* Certificates Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
+          viewport={{ once: true }}
+          className="mb-8 text-center sm:mb-12"
+        >
+          <h3 className="font-clash mb-3 text-2xl font-bold sm:mb-4 sm:text-3xl lg:text-4xl">
+            Certifications
+          </h3>
+          <p className="mx-auto max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">
+            Professional certifications and achievements that showcase my
+            commitment to continuous learning.
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {certificates.map((cert, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, delay: index * 0.02 }}
+              viewport={{ once: true, margin: "-100px" }}
+              className="glassmorphism group cursor-pointer rounded-xl p-4 transition-all duration-300 hover:bg-slate-800/40 sm:p-6"
+              onClick={() => setSelectedCertificate(cert.image)}
+            >
+              <div className="mb-3 flex h-40 items-center justify-center overflow-hidden rounded-lg bg-slate-700/50 sm:mb-4 sm:h-48">
+                <img
+                  src={cert.image}
+                  alt={cert.title}
+                  className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+
+              <h4 className="font-clash mb-2 text-base font-bold text-white sm:text-lg">
+                {cert.title}
+              </h4>
+              <p className="text-xs text-slate-400 sm:text-sm">
+                {cert.description}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      {/* Certificate Modal */}
+      {selectedCertificate && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-2 sm:p-4"
+          onClick={() => setSelectedCertificate(null)}
+        >
+          {/* Close button */}
+          <button
+            onClick={() => setSelectedCertificate(null)}
+            className="absolute right-2 top-2 z-10 rounded-full bg-white/10 p-2 text-white backdrop-blur-sm transition-all duration-200 hover:scale-110 hover:bg-white/20 sm:right-4 sm:top-4 sm:p-3"
+          >
+            <X size={20} className="sm:hidden" />
+            <X size={24} className="hidden sm:block" />
+          </button>
+
+          {/* Certificate Image */}
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.8, opacity: 0 }}
+            transition={{ type: "spring", damping: 25, stiffness: 300 }}
+            className="relative max-h-[85vh] max-w-[95vw] sm:max-h-[70vh] sm:max-w-[80vw]"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={selectedCertificate}
+              alt="Certificate"
+              className="h-auto w-full rounded-lg object-contain shadow-2xl"
+              style={{
+                maxHeight: window.innerWidth < 640 ? "85vh" : "70vh",
+                maxWidth: window.innerWidth < 640 ? "95vw" : "80vw",
+              }}
+            />
+          </motion.div>
+        </motion.div>
+      )}
+    </section>
+  );
+}
