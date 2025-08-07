@@ -102,7 +102,7 @@ export default function Experience() {
     {
       title: "Ideathon 2025 Certificate",
       image:
-        "https://res.cloudinary.com/dlxybta5a/image/upload/v1754429348/Secom_certificate_01.05.2024._enpn6k.jpg",
+        "https://res.cloudinary.com/dlxybta5a/image/upload/v1754562549/Ideathon-Certificate_dfdtan.png",
       description: "SSU Ideathon 2025 Certificate",
     },
     {
@@ -122,6 +122,13 @@ export default function Experience() {
       image:
         "https://res.cloudinary.com/dlxybta5a/image/upload/v1754429346/React-Bootcamp-Skillected_tbqwsv.jpg",
       description: "Comprehensive React.js development bootcamp by Skillected",
+    },
+    {
+      title: "Seacom Online Session",
+      image:
+        "https://res.cloudinary.com/dlxybta5a/image/upload/v1754429348/Secom_certificate_01.05.2024._enpn6k.jpg",
+      description:
+        "Seacom Skills University online Lecture session certificate.",
     },
     {
       title: "Tata Certificate Forge",
