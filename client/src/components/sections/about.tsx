@@ -115,11 +115,16 @@ export default function About() {
             className="flex justify-center lg:justify-end"
           >
             <div className="relative">
-              <div className="glassmorphism h-72 w-64 overflow-hidden rounded-2xl transition-transform duration-300 hover:scale-105 sm:h-80 sm:w-72 lg:h-96 lg:w-80">
+              {/* Shining effect overlay */}
+              <div className="absolute inset-0 z-10 overflow-hidden rounded-2xl">
+                <div className="animate-shine absolute -inset-10 -skew-x-12 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+              </div>
+
+              <div className="glassmorphism h-80 w-72 overflow-hidden rounded-2xl sm:h-96 sm:w-80 lg:h-[28rem] lg:w-96 xl:h-[32rem] xl:w-[26rem]">
                 <img
                   src="https://res.cloudinary.com/dlxybta5a/image/upload/v1754429079/Chirantan-mallick-hero-image_sdw6ld.jpg"
                   alt="Chirantan Mallick"
-                  className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
+                  className="h-full w-full object-cover"
                   onError={(e) => {
                     // Fallback to a placeholder
                     e.currentTarget.src =
@@ -127,7 +132,8 @@ export default function About() {
                   }}
                 />
               </div>
-              <div className="border-accent-teal absolute inset-0 -z-10 translate-x-3 translate-y-3 rounded-2xl border-2 sm:translate-x-4 sm:translate-y-4"></div>
+
+              <div className="border-accent-teal absolute inset-0 -z-10 translate-x-4 translate-y-4 rounded-2xl border-2 sm:translate-x-5 sm:translate-y-5 lg:translate-x-6 lg:translate-y-6"></div>
             </div>
           </motion.div>
         </div>
