@@ -1,7 +1,7 @@
 # 🚀 Chirantan Mallick - Portfolio
 
 <div align="center">
-  <img src="client/public/assets/Logo.png" alt="Portfolio Logo" width="120" height="120" style="border-radius: 50%;">
+  <img src="https://res.cloudinary.com/dlxybta5a/image/upload/v1754561991/Logo_pwsixx.png" alt="Portfolio Logo" width="120" height="120" style="border-radius: 50%;">
   
   <h3>🎯 Full Stack Developer & AI/ML Enthusiast</h3>
   
