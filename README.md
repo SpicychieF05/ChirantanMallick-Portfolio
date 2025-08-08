@@ -161,10 +161,12 @@ Welcome to my modern, interactive portfolio website built with cutting-edge tech
 ## 📁 **Project Structure**
 
 ```
-ChirantanPortfolio/
-├── .env.example                   # Environment variables template
+ChirantanMallick-Portfolio/
+├── .eslintrc.json                 # ESLint configuration
 ├── .gitignore                     # Git ignore rules
-├── .nvmrc                         # Node.js version specification
+├── .prettierrc                    # Prettier configuration
+├── .vercelignore                  # Vercel ignore rules
+├── .vscode/                       # VS Code settings
 ├── components.json                # shadcn/ui components configuration
 ├── package.json                   # NPM package configuration
 ├── postcss.config.js              # PostCSS configuration
@@ -173,12 +175,15 @@ ChirantanPortfolio/
 ├── tsconfig.json                  # TypeScript configuration
 ├── vercel.json                    # Vercel deployment configuration
 ├── vite.config.ts                 # Vite build configuration
+├── dist/                          # Production build output
 │
 ├── client/                        # Main application directory
 │   ├── index.html                 # HTML entry point
 │   ├── public/                    # Static assets
-│   │   └── assets/                # Images and media files
-│   │       └── Logo-icon.png      # Portfolio logo
+│   │   ├── google71ab9a513ce8a8cc.html  # Google verification
+│   │   ├── robots.txt             # Search engine crawling rules
+│   │   ├── sitemap.xml            # Site structure for SEO
+│   │   └── sw.js                  # Service worker for caching
 │   │
 │   └── src/                       # Source code
 │       ├── App.tsx                # Main React component
@@ -196,7 +201,7 @@ ChirantanPortfolio/
 │       │   │
 │       │   └── ui/                # UI components
 │       │       ├── animated-button.tsx    # Custom animated buttons
-│       │       ├── background.tsx         # Animated background
+│       │       ├── background.tsx         # Vanta.js animated background
 │       │       ├── button.tsx             # Base button component
 │       │       ├── card.tsx               # Card component
 │       │       ├── cursor.tsx             # Custom cursor effect
@@ -221,7 +226,8 @@ ChirantanPortfolio/
 │       │
 │       ├── lib/                   # Utility libraries
 │       │   ├── queryClient.ts     # React Query configuration
-│       │   └── utils.ts           # Utility functions
+│       │   ├── seo-utils.ts       # SEO utility functions
+│       │   └── utils.ts           # General utility functions
 │       │
 │       └── pages/                 # Page components
 │           ├── home.tsx           # Main portfolio page
