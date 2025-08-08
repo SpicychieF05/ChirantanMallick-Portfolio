@@ -249,7 +249,7 @@ export default function Contact() {
             {/* Resume Download */}
             <div className="text-center">
               <a
-                href="https://drive.google.com/file/d/1lPIXPhbDmuDqU1IGBc5DOoPKtbKeT6nG/view?usp=sharing"
+                href="https://drive.google.com/file/d/1vdWyvrWPerY7Ic166uNUWk_59O39owx6/view?usp=sharing"
                 className="gradient-border group inline-block"
                 download="Chirantan_Mallick_Resume.pdf"
               >
