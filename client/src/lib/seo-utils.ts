@@ -67,7 +67,7 @@ export const updateTwitterTags = (data: {
 
 // SEO constants
 export const SEO_CONFIG = {
-  baseUrl: "https://chirantan-portfolio.vercel.app",
+  baseUrl: "https://chirantanmallick.vercel.app",
   defaultTitle: "Chirantan Mallick - Front-end Developer & AI/ML Engineer",
   defaultDescription:
     "Explore Chirantan Mallick's portfolio - Front-end Developer & AI/ML Engineer. Innovative projects including SalaryScope, SemesterHub & AI Resume Screener. View my work!",

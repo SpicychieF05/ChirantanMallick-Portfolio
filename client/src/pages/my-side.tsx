@@ -21,14 +21,14 @@ export default function MySide() {
     if (canonicalLink) {
       canonicalLink.setAttribute(
         "href",
-        "https://chirantan-portfolio.vercel.app/my-side"
+        "https://chirantanmallick.vercel.app/my-side"
       );
     } else {
       canonicalLink = document.createElement("link");
       canonicalLink.setAttribute("rel", "canonical");
       canonicalLink.setAttribute(
         "href",
-        "https://chirantan-portfolio.vercel.app/my-side"
+        "https://chirantanmallick.vercel.app/my-side"
       );
       document.head.appendChild(canonicalLink);
     }
