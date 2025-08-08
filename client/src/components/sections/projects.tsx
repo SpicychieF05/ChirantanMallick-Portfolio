@@ -70,6 +70,8 @@ export default function Projects() {
     <section
       id="projects"
       className="relative z-10 w-full overflow-hidden px-4 py-16 sm:px-6 sm:py-24 lg:px-8"
+      role="region"
+      aria-labelledby="projects-heading"
     >
       <div className="mx-auto w-full max-w-6xl">
         <motion.div

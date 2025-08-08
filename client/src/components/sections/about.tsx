@@ -15,6 +15,8 @@ export default function About() {
     <section
       id="about"
       className="relative z-10 px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24"
+      role="region"
+      aria-labelledby="about-heading"
     >
       <div className="mx-auto max-w-6xl">
         <motion.div
@@ -26,7 +28,10 @@ export default function About() {
           <h2 className="font-clash text-accent-indigo mr-3 text-2xl font-bold sm:mr-4 sm:text-3xl lg:text-4xl">
             01.
           </h2>
-          <h2 className="font-clash text-2xl font-bold sm:text-3xl lg:text-4xl">
+          <h2
+            id="about-heading"
+            className="font-clash text-2xl font-bold sm:text-3xl lg:text-4xl"
+          >
             About Me
           </h2>
           <div className="ml-4 h-px flex-1 bg-slate-600 sm:ml-8"></div>

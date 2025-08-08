@@ -7,12 +7,47 @@ import Skills from "@/components/sections/skills";
 import Background from "@/components/ui/background";
 import Cursor from "@/components/ui/cursor";
 import Navbar from "@/components/ui/navbar";
+import {
+  SEO_CONFIG,
+  updateCanonicalUrl,
+  updateMetaTag,
+  updateOpenGraphTags,
+  updateTwitterTags,
+} from "@/lib/seo-utils";
 import { useEffect } from "react";
 
 export default function Home() {
   useEffect(() => {
-    // Set page title
-    document.title = "ChirantanMallick.in";
+    // Set comprehensive SEO meta tags
+    document.title = SEO_CONFIG.defaultTitle;
+
+    // Update meta tags
+    updateMetaTag("description", SEO_CONFIG.defaultDescription);
+    updateMetaTag(
+      "keywords",
+      "Chirantan Mallick, Front-end Developer, AI Engineer, Machine Learning, React, Portfolio, BCA Student"
+    );
+    updateMetaTag("author", SEO_CONFIG.author);
+
+    // Update canonical URL
+    updateCanonicalUrl(SEO_CONFIG.baseUrl);
+
+    // Update Open Graph tags
+    updateOpenGraphTags({
+      title: SEO_CONFIG.defaultTitle,
+      description:
+        "Portfolio showcasing AI/ML projects and front-end development expertise",
+      url: SEO_CONFIG.baseUrl,
+      image: SEO_CONFIG.defaultImage,
+    });
+
+    // Update Twitter tags
+    updateTwitterTags({
+      title: SEO_CONFIG.defaultTitle,
+      description:
+        "Portfolio showcasing AI/ML projects and front-end development expertise",
+      image: SEO_CONFIG.defaultImage,
+    });
   }, []);
 
   return (
@@ -21,7 +56,7 @@ export default function Home() {
       <Cursor />
       <Navbar />
 
-      <main>
+      <main role="main">
         <Hero />
         <About />
         <Skills />
@@ -30,7 +65,10 @@ export default function Home() {
         <Contact />
       </main>
 
-      <footer className="relative z-10 px-4 py-12 text-center sm:px-6 lg:px-8">
+      <footer
+        className="relative z-10 px-4 py-12 text-center sm:px-6 lg:px-8"
+        role="contentinfo"
+      >
         <div className="mx-auto max-w-6xl">
           <div className="glassmorphism rounded-xl p-8">
             <p className="mb-4 text-slate-400">
