@@ -26,5 +26,8 @@
   "less.validate": false,
   "editor.quickSuggestions": {
     "strings": true
-  }
+  },
+  "background.windowBackgrounds": [
+    "d:/Best BG/premium_photo-1745378835073-07d1c1d446d2.png"
+  ]
 }
