@@ -137,7 +137,12 @@ export default function Contact() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{
+            duration: 0.8,
+            ease: [0.25, 0.1, 0.25, 1],
+            type: "tween",
+          }}
+          viewport={{ once: true, margin: "-100px" }}
           className="mb-16 text-center"
         >
           <h2 className="text-accent-teal mb-4 font-mono">05. What's Next?</h2>
@@ -156,7 +161,13 @@ export default function Contact() {
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{
+              duration: 0.8,
+              delay: 0.2,
+              ease: [0.25, 0.1, 0.25, 1],
+              type: "tween",
+            }}
+            viewport={{ once: true, margin: "-50px" }}
             className="space-y-8"
           >
             <div className="glassmorphism rounded-xl p-6">
@@ -265,7 +276,13 @@ export default function Contact() {
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            transition={{
+              duration: 0.8,
+              delay: 0.4,
+              ease: [0.25, 0.1, 0.25, 1],
+              type: "tween",
+            }}
+            viewport={{ once: true, margin: "-50px" }}
             className="glassmorphism rounded-xl p-8"
           >
             <h4 className="font-clash mb-6 text-xl font-semibold">

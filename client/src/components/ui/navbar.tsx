@@ -3,6 +3,7 @@ import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useLocation } from "wouter";
 import { useIsMobile } from "../../hooks/use-mobile";
+import { lenisScrollTo, scrollToTop } from "../../lib/scroll-utils";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -55,11 +56,8 @@ export default function Navbar() {
       // Navigate to different page
       setLocation(href);
     } else {
-      // Scroll to section on current page
-      const element = document.querySelector(href);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-      }
+      // Use Lenis for smooth scrolling to section
+      lenisScrollTo(href);
     }
   };
 
@@ -73,18 +71,18 @@ export default function Navbar() {
       setTimeout(() => {
         const heroElement = document.querySelector("#home");
         if (heroElement) {
-          heroElement.scrollIntoView({ behavior: "smooth" });
+          lenisScrollTo("#home");
         } else {
-          window.scrollTo({ top: 0, behavior: "smooth" });
+          scrollToTop();
         }
       }, 100);
     } else {
       // Already on home page, just scroll to hero section
       const heroElement = document.querySelector("#home");
       if (heroElement) {
-        heroElement.scrollIntoView({ behavior: "smooth" });
+        lenisScrollTo("#home");
       } else {
-        window.scrollTo({ top: 0, behavior: "smooth" });
+        scrollToTop();
       }
     }
   };

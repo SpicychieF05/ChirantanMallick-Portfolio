@@ -1,5 +1,6 @@
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { useLenis } from "@/hooks/use-lenis";
 import Home from "@/pages/home";
 import MySide from "@/pages/my-side";
 import { QueryClientProvider } from "@tanstack/react-query";
@@ -17,6 +18,9 @@ function Router() {
 }
 
 function App() {
+  // Initialize Lenis for smooth scrolling
+  useLenis();
+
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
